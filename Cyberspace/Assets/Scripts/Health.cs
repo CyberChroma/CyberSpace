@@ -6,6 +6,7 @@ public class Health : MonoBehaviour {
 
     public float startHealth;
     public string[] tagsToDamage;
+    public GameObject spawnExplosion;
     public GameObject deathExplosion;
 
     [HideInInspector] public bool healthChanged;
@@ -19,6 +20,13 @@ public class Health : MonoBehaviour {
         currentHealth = startHealth;
         particleParent = GameObject.Find("Particle Systems").transform;
 	}
+
+    void OnEnable () {
+        if (spawnExplosion && Time.timeSinceLevelLoad > 1)
+        {
+            Instantiate(spawnExplosion, transform.position, transform.rotation, particleParent);
+        }
+    }
 
     void OnTriggerEnter (Collider other) {
         foreach (string tag in tagsToDamage)

@@ -4,42 +4,74 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour {
 
-    public float speed;
-    public bool startRight;
-    public float dirChangeTime;
-    public float downDis;
+    public enum State
+    {
+        enter,
+        attack,
+        exit
+    }
 
-    private float dir;
+    public float speed;
+    public Transform[] path;
+    public float stopTime;
+
+    [HideInInspector] public State state;
+
+    private int pathNum;
+    private Vector3 offset;
+    private Vector3 rotOffset;
     private Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
-        if (startRight)
+        rb = GetComponent<Rigidbody>();
+        offset = rb.position - path[0].position;
+        rotOffset = rb.rotation.eulerAngles - path[0].rotation.eulerAngles;
+        pathNum = 1;
+        state = State.enter;
+        gameObject.SetActive(false);
+	}
+
+	// Update is called once per frame
+	void FixedUpdate () {
+        if (state == State.enter)
         {
-            dir = 1;
+            rb.MovePosition(Vector3.MoveTowards(rb.position, path[pathNum].position + offset, speed / 10));
+            rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, Quaternion.Euler(path[pathNum].rotation.eulerAngles + rotOffset), speed));
+            if (Vector3.Distance(rb.position, path[pathNum].position + offset) <= 0.1f)
+            {
+                rb.MovePosition(path[pathNum].position + offset);
+                rb.MoveRotation(Quaternion.Euler(path[pathNum].rotation.eulerAngles + rotOffset));
+                pathNum++;
+                if (path.Length <= pathNum)
+                {
+                    gameObject.SetActive(false);
+                }
+            }
+        }
+        else if (state == State.attack)
+        {
+            transform.localPosition = new Vector3 (transform.localPosition.x, transform.localPosition.y, 0);
         }
         else
         {
-            dir = -1;
+            transform.localPosition = (Vector3.MoveTowards(transform.localPosition, new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z - 5), speed / 10));
         }
-        rb = GetComponent<Rigidbody>();
-        StartCoroutine(WaitToChangeDir());
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-        rb.AddForce(transform.right * speed * dir);
-        transform.localPosition = new Vector3 (transform.localPosition.x, transform.localPosition.y, 0); 
-	}
-       
-    IEnumerator WaitToChangeDir () {
-        yield return new WaitForSeconds(dirChangeTime);
-        ChangeDir();
+
+    void OnTriggerEnter (Collider other) {
+        if (other.name == "Game Area" && state == State.enter)
+        {
+            transform.parent = other.transform;
+            state = State.attack;
+            StartCoroutine (Attack());
+        }
     }
 
-    void ChangeDir () {
-        dir *= -1;
-        transform.localPosition = new Vector3 (transform.localPosition.x, transform.localPosition.y - downDis, transform.localPosition.z); 
-        StartCoroutine(WaitToChangeDir());
+    IEnumerator Attack () {
+        yield return new WaitForSeconds(stopTime);
+        state = State.exit;
+        yield return new WaitForSeconds(5);
+        gameObject.SetActive(false);
     }
 }

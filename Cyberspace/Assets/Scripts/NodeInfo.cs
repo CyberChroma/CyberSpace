@@ -14,16 +14,13 @@ public class NodeInfo : MonoBehaviour {
     public NodeType nodeType;
     public float speed;
     public int loopTo;
-    public bool spawn;
-    public GameObject spawner;
+    public GameObject[] enemiesToSpawn;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void Spawn () {
+        foreach (GameObject enemy in enemiesToSpawn)
+        {
+            enemy.SetActive(true);
+        }
+        enemiesToSpawn = null;
+    }
 }

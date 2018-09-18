@@ -137,6 +137,7 @@ ModelImporter:
     2300080: Spike_040
     2300082: Spike_041
     2300084: Spike_042
+    2300086: //RootNode
     3300000: Center
     3300002: Spike_001
     3300004: Spike_002
@@ -180,6 +181,7 @@ ModelImporter:
     3300080: Spike_040
     3300082: Spike_041
     3300084: Spike_042
+    3300086: //RootNode
     4300000: Center
     4300002: Spike_042
     4300004: Spike_041

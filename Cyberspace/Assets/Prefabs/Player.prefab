@@ -85,8 +85,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4348161249292768}
-  - component: {fileID: 33198202462865290}
-  - component: {fileID: 23157899937095740}
   - component: {fileID: 65650022681790564}
   - component: {fileID: 114448452079533116}
   - component: {fileID: 54342892106216668}
@@ -264,41 +262,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23157899937095740
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1541273722837842}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 77b1c56417b40c547aa0399e40843455, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23424326104596916
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -425,13 +388,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1163499884229232}
   m_Mesh: {fileID: 4300006, guid: 6cfee1d141f67644c99ee52bb7d07b31, type: 3}
---- !u!33 &33198202462865290
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1541273722837842}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33488465303954908
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -499,6 +455,7 @@ MonoBehaviour:
   tagsToDamage:
   - Enemy
   - Enemy Shot
+  - Hazard
   deathExplosion: {fileID: 1000010255299472, guid: 5e6ceca3a235fc2478454aa3f2e1fb61,
     type: 2}
   healthChanged: 0

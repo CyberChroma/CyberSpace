@@ -42,6 +42,10 @@ public class MoveF : MonoBehaviour {
             {
                 currentNode = nodes[currentNode].loopTo;
             }
+            if (nodes[lastNode].enemiesToSpawn != null)
+            {
+                nodes[lastNode].Spawn();
+            }
             perc = 0;
         }
 	}
