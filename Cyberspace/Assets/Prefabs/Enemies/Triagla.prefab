@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114972220025395852}
   - component: {fileID: 114364801940160500}
   - component: {fileID: 114795223310747566}
+  - component: {fileID: 114101488464020044}
   m_Layer: 0
   m_Name: Triagla
   m_TagString: Enemy
@@ -732,6 +733,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114101488464020044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1366225658941148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5084cc417a702e748b90deae10363d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 10
 --- !u!114 &114364801940160500
 MonoBehaviour:
   m_ObjectHideFlags: 1

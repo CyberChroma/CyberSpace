@@ -205,3 +205,4 @@ MonoBehaviour:
   - Environment
   - Player
   tagsToIgnore: []
+  deathExplosion: {fileID: 0}

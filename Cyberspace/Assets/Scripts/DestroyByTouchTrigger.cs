@@ -7,6 +7,7 @@ public class DestroyByTouchTrigger : MonoBehaviour {
 	public float delay; // The delay before being destroying
 	public string[] tagsToDestroy; // The tags to destroy self (Any if null)
 	public string[] tagsToIgnore; // The tags to ignore (If damage all tags)
+    public GameObject deathExplosion;
 
     private bool setToDestroy; // Whether the object has been set to destroy itself
 
@@ -14,6 +15,10 @@ public class DestroyByTouchTrigger : MonoBehaviour {
 		if (tagsToDestroy.Length != 0) { // If the tags to destroy is not null
 			foreach (string tag in tagsToDestroy) { // Goes through each tag
 				if (other.CompareTag (tag)) { // If the collided object is something that should cause this object to destroy itself
+                    if (deathExplosion)
+                    {
+                        Instantiate(deathExplosion, transform.position, transform.rotation);
+                    }
 					Destroy (gameObject, delay); // Destroy this object after a delay
 				}
 			}
@@ -25,9 +30,17 @@ public class DestroyByTouchTrigger : MonoBehaviour {
 				}
 			}
             if (setToDestroy) { // If the bool is still true
+                if (deathExplosion)
+                {
+                    Instantiate(deathExplosion, transform.position, transform.rotation);
+                }
 				Destroy (gameObject, delay); // Destroy this object after a delay
 			}
 		} else {
+            if (deathExplosion)
+            {
+                Instantiate(deathExplosion, transform.position, transform.rotation);
+            }
 			Destroy (gameObject, delay); // Destroy this object after a delay
 		}
 	}

@@ -26,7 +26,7 @@ public class MoveLR : MonoBehaviour {
         {
             moveDir = 1;
         }
-        rb.AddForce (transform.right * moveDir * speed);
+        rb.AddForce (transform.right * moveDir * speed * 10);
         transform.localPosition = new Vector3 (transform.localPosition.x, transform.localPosition.y, 0); 
 	}
 }

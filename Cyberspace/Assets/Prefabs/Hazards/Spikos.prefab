@@ -734,6 +734,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4219401382449696}
   - component: {fileID: 135013631277492350}
+  - component: {fileID: 114245830386880300}
+  - component: {fileID: 114981706464540972}
   m_Layer: 0
   m_Name: Spikos
   m_TagString: Hazard
@@ -3179,6 +3181,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1608166005675714}
   m_Mesh: {fileID: 4300062, guid: 41f6c828614ee984bab6f7eb8d8b5e7a, type: 3}
+--- !u!114 &114245830386880300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1963310510963340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f570b375cc5fe1a478c12ef5a9c13015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  tagsToDestroy:
+  - Player
+  tagsToIgnore: []
+  deathExplosion: {fileID: 1000010255299472, guid: 6f16d364b30858b47a0c688bbe3c34ec,
+    type: 2}
+--- !u!114 &114981706464540972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1963310510963340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5084cc417a702e748b90deae10363d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: -5
 --- !u!135 &135013631277492350
 SphereCollider:
   m_ObjectHideFlags: 1

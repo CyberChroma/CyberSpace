@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4683699824191198}
   m_Layer: 0
   m_Name: Shot Spawn
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,13 +102,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4219785449031398}
+  - component: {fileID: 114421656994909634}
   m_Layer: 0
   m_Name: Basic Gun
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1187926507900292
 GameObject:
   m_ObjectHideFlags: 1
@@ -134,13 +135,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4104085860551944}
+  - component: {fileID: 114415990103679082}
+  - component: {fileID: 65858984662515538}
   m_Layer: 0
   m_Name: Armor Center
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1342912222930206
 GameObject:
   m_ObjectHideFlags: 1
@@ -234,13 +237,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4194111572895908}
+  - component: {fileID: 114213799601477634}
   m_Layer: 0
   m_Name: Aim Gun
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1541273722837842
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +253,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4348161249292768}
-  - component: {fileID: 65650022681790564}
   - component: {fileID: 54342892106216668}
   - component: {fileID: 114448452079533116}
   - component: {fileID: 114709063280281220}
@@ -303,13 +306,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4299096224769294}
+  - component: {fileID: 114021735646618818}
   m_Layer: 0
   m_Name: Tank Track
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1656229302760198
 GameObject:
   m_ObjectHideFlags: 1
@@ -352,13 +356,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4688141472102370}
+  - component: {fileID: 114404186732922114}
+  - component: {fileID: 65051992190062998}
   m_Layer: 0
   m_Name: Basic Center
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1742529026705116
 GameObject:
   m_ObjectHideFlags: 1
@@ -435,13 +441,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4448657638590222}
+  - component: {fileID: 114289670875246544}
   m_Layer: 0
   m_Name: Basic Wheel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1851652417485158
 GameObject:
   m_ObjectHideFlags: 1
@@ -836,7 +843,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1823310422110984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.255, z: 0}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4464554158482140}
@@ -2087,18 +2094,78 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &65650022681790564
+--- !u!65 &65051992190062998
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1541273722837842}
+  m_GameObject: {fileID: 1718792019454488}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.3, z: 0}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65858984662515538
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1276824224475510}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7, y: 0.8, z: 1}
+  m_Center: {x: 0, y: 0.1, z: 0}
+--- !u!114 &114021735646618818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646215796689134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e474f15591b03f04c82a96a517f32641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addedHealth: 1
+  addedSpeed: -0.5
+  shot: {fileID: 0}
+  coolDown: 0
+  canAim: 0
+--- !u!114 &114213799601477634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1491281548653034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e474f15591b03f04c82a96a517f32641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addedHealth: 0
+  addedSpeed: 0
+  shot: {fileID: 1533914496388058, guid: c1a4867e19ada8c40bd500426c86e10f, type: 2}
+  coolDown: 0.2
+  canAim: 0
+--- !u!114 &114289670875246544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1823310422110984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e474f15591b03f04c82a96a517f32641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addedHealth: 0
+  addedSpeed: 0
+  shot: {fileID: 0}
+  coolDown: 0
+  canAim: 0
 --- !u!114 &114349535517624770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2120,6 +2187,54 @@ MonoBehaviour:
     type: 2}
   healthChanged: 0
   currentHealth: 0
+--- !u!114 &114404186732922114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1718792019454488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e474f15591b03f04c82a96a517f32641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addedHealth: 0
+  addedSpeed: 0
+  shot: {fileID: 0}
+  coolDown: 0
+  canAim: 0
+--- !u!114 &114415990103679082
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1276824224475510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e474f15591b03f04c82a96a517f32641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addedHealth: 2
+  addedSpeed: -1
+  shot: {fileID: 0}
+  coolDown: 0
+  canAim: 0
+--- !u!114 &114421656994909634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1164205457448432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e474f15591b03f04c82a96a517f32641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addedHealth: 0
+  addedSpeed: 0
+  shot: {fileID: 1533914496388058, guid: c1a4867e19ada8c40bd500426c86e10f, type: 2}
+  coolDown: 0
+  canAim: 0
 --- !u!114 &114448452079533116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2131,7 +2246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9efa4d72d9d8749bac6d8142355788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 60
+  speed: 6
 --- !u!114 &114709063280281220
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -157,3 +157,4 @@ MonoBehaviour:
   - Environment
   - Enemy
   tagsToIgnore: []
+  deathExplosion: {fileID: 0}

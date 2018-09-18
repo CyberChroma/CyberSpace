@@ -18,7 +18,7 @@ public class HealthBarUI : MonoBehaviour {
     private bool sliderUpdating = true; // Whether the slider should be moving
 
     // Use this for initialization
-    void Awake () {
+    void Start () {
         slider = GetComponent<Slider> (); // Getting reference
         fillImage = transform.Find ("Fill Area/Fill").GetComponent<Image> (); // Getting the reference
         slider.maxValue = health.startHealth; // Setting initial value
