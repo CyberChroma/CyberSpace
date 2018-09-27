@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveLR : MonoBehaviour {
 
     public float speed;
+    public float slide;
 
     private Rigidbody rb;
     private InputController inputController;
@@ -12,6 +13,7 @@ public class MoveLR : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
+        rb.drag = slide;
         inputController = GameObject.Find("Input Controller").GetComponent<InputController>();
 	}
 	

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f00f0435e7bdb5d4c86a7bb29e5a1524
+guid: d7f944faa1edb0049bc7acd0d55d7c2a
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -7,29 +7,32 @@ ModelImporter:
     100002: //RootNode
     100004: Trunk
     100006: //RootNode
-    100008: Gun
-    100010: Tank_Gun
+    100008: Cake_Center
+    100010: Candles
     400000: Leafs
     400002: //RootNode
     400004: Trunk
     400006: //RootNode
-    400008: Gun
-    400010: Tank_Gun
+    400008: Cake_Center
+    400010: Candles
     2100000: Leafs
     2100002: Trunk
-    2100004: Gun
+    2100004: Candles
+    2100006: Flame
+    2100008: Cake_Center
+    2100010: Chocolate
     2300000: Leafs
     2300002: Trunk
-    2300004: Gun
-    2300006: Tank_Gun
+    2300004: Cake_Center
+    2300006: Candles
     3300000: Leafs
     3300002: Trunk
-    3300004: Gun
-    3300006: Tank_Gun
+    3300004: Cake_Center
+    3300006: Candles
     4300000: Leafs
     4300002: Trunk
-    4300004: Gun
-    4300006: Tank_Gun
+    4300004: Candles
+    4300006: Cake_Center
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

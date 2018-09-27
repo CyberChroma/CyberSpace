@@ -60,7 +60,7 @@ public class EnemyMove : MonoBehaviour {
 	}
 
     void OnTriggerEnter (Collider other) {
-        if (other.name == "Game Area" && state == State.enter)
+        if (other.name == "Enemy Hit" && state == State.enter)
         {
             transform.parent = other.transform;
             state = State.attack;

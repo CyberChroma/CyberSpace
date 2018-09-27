@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f00f0435e7bdb5d4c86a7bb29e5a1524
+guid: 0cf4c8b5ef8a490458af0163156a4d75
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -7,29 +7,25 @@ ModelImporter:
     100002: //RootNode
     100004: Trunk
     100006: //RootNode
-    100008: Gun
-    100010: Tank_Gun
+    100008: Boomerang_Shot
     400000: Leafs
     400002: //RootNode
     400004: Trunk
     400006: //RootNode
-    400008: Gun
-    400010: Tank_Gun
+    400008: Boomerang_Shot
     2100000: Leafs
     2100002: Trunk
-    2100004: Gun
+    2100004: End
+    2100006: Boomerang_Shot
     2300000: Leafs
     2300002: Trunk
-    2300004: Gun
-    2300006: Tank_Gun
+    2300004: Boomerang_Shot
     3300000: Leafs
     3300002: Trunk
-    3300004: Gun
-    3300006: Tank_Gun
+    3300004: Boomerang_Shot
     4300000: Leafs
     4300002: Trunk
-    4300004: Gun
-    4300006: Tank_Gun
+    4300004: Boomerang_Shot
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

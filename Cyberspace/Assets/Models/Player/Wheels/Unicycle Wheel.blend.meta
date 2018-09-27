@@ -1,18 +1,51 @@
 fileFormatVersion: 2
-guid: 1f403606978e18645a3200af78b442e1
+guid: 343e6a36e2ae0c34bb21d4cc807c7f8b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Ship
-    400000: //RootNode
-    400002: Ship
-    2100000: Ship
-    2300000: //RootNode
-    2300002: Ship
-    3300000: //RootNode
-    3300002: Ship
-    4300000: Ship
+    100000: Leafs
+    100002: //RootNode
+    100004: Trunk
+    100006: Cylinder
+    100008: Cylinder_001
+    100010: Cylinder_002
+    100012: Cylinder_003
+    100014: //RootNode
+    100016: Unicycle_Wheel
+    400000: Leafs
+    400002: //RootNode
+    400004: Trunk
+    400006: Cylinder
+    400008: Cylinder_001
+    400010: Cylinder_002
+    400012: Cylinder_003
+    400014: //RootNode
+    400016: Unicycle_Wheel
+    2100000: Leafs
+    2100002: Trunk
+    2100004: Spoke
+    2100006: Unicycle_Wheel
+    2300000: Leafs
+    2300002: Trunk
+    2300004: Cylinder
+    2300006: Cylinder_001
+    2300008: Cylinder_002
+    2300010: Cylinder_003
+    2300012: Unicycle_Wheel
+    3300000: Leafs
+    3300002: Trunk
+    3300004: Cylinder
+    3300006: Cylinder_001
+    3300008: Cylinder_002
+    3300010: Cylinder_003
+    3300012: Unicycle_Wheel
+    4300000: Leafs
+    4300002: Trunk
+    4300004: Cylinder_003
+    4300006: Cylinder_002
+    4300008: Cylinder_001
+    4300010: Cylinder
+    4300012: Unicycle_Wheel
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
@@ -66,7 +99,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.5
+    previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 0
@@ -89,7 +122,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0

@@ -8,23 +8,30 @@ ModelImporter:
     100004: Trunk
     100006: //RootNode
     100008: Gun
+    100010: Basic_Gun
     400000: Leafs
     400002: //RootNode
     400004: Trunk
     400006: //RootNode
     400008: Gun
+    400010: Basic_Gun
     2100000: Leafs
     2100002: Trunk
     2100004: Gun
+    2100006: Basic_Gun
+    2100008: Stripe
     2300000: Leafs
     2300002: Trunk
     2300004: Gun
+    2300006: Basic_Gun
     3300000: Leafs
     3300002: Trunk
     3300004: Gun
+    3300006: Basic_Gun
     4300000: Leafs
     4300002: Trunk
     4300004: Gun
+    4300006: Basic_Gun
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

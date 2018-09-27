@@ -10,6 +10,13 @@ ModelImporter:
     100008: Jet
     100010: Jet_001
     100012: Wheel
+    100014: Jet_002
+    100016: Wheel_001
+    100018: Wheel_002
+    100020: Basic_Wheel
+    100022: Basic_Wheel_001
+    100024: Basic_Wheel_002
+    100026: Basic_Wheel_003
     400000: Leafs
     400002: //RootNode
     400004: Trunk
@@ -17,25 +24,54 @@ ModelImporter:
     400008: Jet
     400010: Jet_001
     400012: Wheel
+    400014: Jet_002
+    400016: Wheel_001
+    400018: Wheel_002
+    400020: Basic_Wheel
+    400022: Basic_Wheel_001
+    400024: Basic_Wheel_002
+    400026: Basic_Wheel_003
     2100000: Leafs
     2100002: Trunk
     2100004: Jet
     2100006: Wheel
+    2100008: Basic_Wheel
     2300000: Leafs
     2300002: Trunk
     2300004: Jet
     2300006: Jet_001
     2300008: Wheel
+    2300010: Jet_002
+    2300012: Wheel_001
+    2300014: Wheel_002
+    2300016: Basic_Wheel
+    2300018: Basic_Wheel_001
+    2300020: Basic_Wheel_002
+    2300022: Basic_Wheel_003
     3300000: Leafs
     3300002: Trunk
     3300004: Jet
     3300006: Jet_001
     3300008: Wheel
+    3300010: Jet_002
+    3300012: Wheel_001
+    3300014: Wheel_002
+    3300016: Basic_Wheel
+    3300018: Basic_Wheel_001
+    3300020: Basic_Wheel_002
+    3300022: Basic_Wheel_003
     4300000: Leafs
     4300002: Trunk
     4300004: Jet_001
     4300006: Jet
     4300008: Wheel
+    4300010: Wheel_002
+    4300012: Jet_002
+    4300014: Wheel_001
+    4300016: Basic_Wheel_003
+    4300018: Basic_Wheel_002
+    4300020: Basic_Wheel_001
+    4300022: Basic_Wheel
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

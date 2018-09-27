@@ -7,11 +7,14 @@ public class PartStats : MonoBehaviour {
     public float addedHealth;
 
     public float addedSpeed;
+    public float slide;
 
     public GameObject shot;
     public float coolDown;
 
     public bool canAim;
+    public float turnSpeed;
+    public float maxAngle;
 
     private Health health;
     private MoveLR moveLR;
@@ -28,6 +31,7 @@ public class PartStats : MonoBehaviour {
             aim = GetComponentInParent<Aim>();
             health.startHealth += addedHealth;
             moveLR.speed += addedSpeed;
+            moveLR.slide += slide;
             if (shot != null)
             {
                 shoot.shot = shot;
@@ -37,11 +41,8 @@ public class PartStats : MonoBehaviour {
             {
                 aim.enabled = true;
             }
+            aim.turnSpeed += turnSpeed;
+            aim.maxAngle += maxAngle;
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        
 	}
 }

@@ -1,35 +1,17 @@
 fileFormatVersion: 2
-guid: f00f0435e7bdb5d4c86a7bb29e5a1524
+guid: 6edf678b97043874e98ae9333423502b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Leafs
-    100002: //RootNode
-    100004: Trunk
-    100006: //RootNode
-    100008: Gun
-    100010: Tank_Gun
-    400000: Leafs
-    400002: //RootNode
-    400004: Trunk
-    400006: //RootNode
-    400008: Gun
-    400010: Tank_Gun
-    2100000: Leafs
-    2100002: Trunk
-    2100004: Gun
-    2300000: Leafs
-    2300002: Trunk
-    2300004: Gun
-    2300006: Tank_Gun
-    3300000: Leafs
-    3300002: Trunk
-    3300004: Gun
-    3300006: Tank_Gun
-    4300000: Leafs
-    4300002: Trunk
-    4300004: Gun
-    4300006: Tank_Gun
+    100000: //RootNode
+    400000: //RootNode
+    2100000: unnamed
+    2100002: Player_Shot
+    2100004: Aim_Shot
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Player_Shot
+    4300002: Aim_Shot
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
@@ -106,7 +88,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0

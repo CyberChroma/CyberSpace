@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114978296966530424}
   - component: {fileID: 114997612758674666}
   m_Layer: 0
-  m_Name: Player Shot
+  m_Name: Aim Shot
   m_TagString: Player Shot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100002, guid: bd5b77d8c67cb024ab261ce866decb51, type: 3}
+  - {fileID: 2100004, guid: 6edf678b97043874e98ae9333423502b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,7 +87,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1533914496388058}
-  m_Mesh: {fileID: 4300000, guid: bd5b77d8c67cb024ab261ce866decb51, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 6edf678b97043874e98ae9333423502b, type: 3}
 --- !u!54 &54569949641657214
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da624e10e1481254db57d58120fa6822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 13
   deathExplosion: {fileID: 1000010993227932, guid: 7017ab23ff3bf4149b68e6012d356fe6,
     type: 2}
 --- !u!114 &114978296966530424
@@ -157,4 +157,5 @@ MonoBehaviour:
   - Environment
   - Enemy
   tagsToIgnore: []
-  deathExplosion: {fileID: 0}
+  deathExplosion: {fileID: 1000010993227932, guid: 7017ab23ff3bf4149b68e6012d356fe6,
+    type: 2}
