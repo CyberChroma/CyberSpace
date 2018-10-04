@@ -34,7 +34,12 @@ ModelImporter:
     4300006: Basic_Gun
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Basic_Gun
+    second: {fileID: 2100000, guid: 5d49d1b21a6c446449c0d3e339a68243, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -88,7 +93,7 @@ ModelImporter:
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4

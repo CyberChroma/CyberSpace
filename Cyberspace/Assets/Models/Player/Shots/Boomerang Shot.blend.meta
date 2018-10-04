@@ -28,7 +28,12 @@ ModelImporter:
     4300004: Boomerang_Shot
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boomerang_Shot
+    second: {fileID: 2100000, guid: 8b5764f64763ce449869d7669c495a9b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -82,7 +87,7 @@ ModelImporter:
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4

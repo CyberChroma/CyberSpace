@@ -22,8 +22,8 @@ public class PartStats : MonoBehaviour {
     private Aim aim;
 
 	// Use this for initialization
-	void Awake () {
-        if (gameObject.activeSelf)
+	void Start () {
+        if (gameObject.activeSelf && GameObject.Find("Game Area"))
         {
             health = GetComponentInParent<Health>();
             moveLR = GetComponentInParent<MoveLR>();

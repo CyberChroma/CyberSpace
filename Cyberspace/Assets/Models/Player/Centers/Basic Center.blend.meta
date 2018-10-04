@@ -60,7 +60,12 @@ ModelImporter:
     4300016: Icosphere
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Basic_Center
+    second: {fileID: 2100000, guid: a08d851758ac07141826ca02b32c3d16, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -114,7 +119,7 @@ ModelImporter:
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4

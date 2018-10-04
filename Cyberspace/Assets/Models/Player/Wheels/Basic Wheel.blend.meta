@@ -74,7 +74,12 @@ ModelImporter:
     4300022: Basic_Wheel
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Basic_Wheel
+    second: {fileID: 2100000, guid: 099e648f6d8b674459b3708ef8a9646b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -128,7 +133,7 @@ ModelImporter:
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4

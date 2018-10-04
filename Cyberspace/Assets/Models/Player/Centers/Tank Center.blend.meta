@@ -33,7 +33,12 @@ ModelImporter:
     4300006: Sphere
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tank_Center
+    second: {fileID: 2100000, guid: f63c2bc4219176e40bfd8d789127a29a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -87,7 +92,7 @@ ModelImporter:
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4

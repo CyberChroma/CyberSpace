@@ -48,7 +48,12 @@ ModelImporter:
     4300012: Unicycle_Wheel
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Unicycle_Wheel
+    second: {fileID: 2100000, guid: 6c25eff1aff91ad44a2267a1e06f4ba3, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -102,7 +107,7 @@ ModelImporter:
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4

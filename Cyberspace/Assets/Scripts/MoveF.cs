@@ -6,6 +6,7 @@ public class MoveF : MonoBehaviour {
 
     public NodeInfo[] nodes;
 
+    [HideInInspector] public GameObject splitCollider;
     private int currentNode = 1;
     private int lastNode = 0;
     private float perc = 0;
@@ -30,7 +31,7 @@ public class MoveF : MonoBehaviour {
         if (Vector3.Distance(transform.position, nodes[currentNode].transform.position) <= 0.1f && Quaternion.Angle(transform.rotation, nodes[currentNode].transform.rotation) <= 1f)
         {
             lastNode = currentNode;
-            if (nodes[currentNode].nodeType == NodeInfo.NodeType.normal)
+            if (nodes[lastNode].nodeType == NodeInfo.NodeType.normal)
             {
                 currentNode++;
                 if (currentNode >= nodes.Length)
@@ -38,9 +39,42 @@ public class MoveF : MonoBehaviour {
                     enabled = false;
                 }
             }
-            else if (nodes[currentNode].nodeType == NodeInfo.NodeType.loop)
+            else if (nodes[lastNode].nodeType == NodeInfo.NodeType.move)
             {
-                currentNode = nodes[currentNode].loopTo;
+                for (int i = 0; i < nodes.Length; i++)
+                {
+                    if (nodes[i].gameObject == nodes[lastNode].moveTo)
+                    {
+                        currentNode = i;
+                    }
+                }
+            }
+
+            else if (nodes[lastNode].nodeType == NodeInfo.NodeType.split)
+            {
+                if (splitCollider != null)
+                {
+                    SplitInfo[] splitInfo = splitCollider.GetComponentInParent<NodeInfo>().splitInfo;
+                    for (int i = 0; i < splitInfo.Length; i++)
+                    {
+                        if (splitInfo[i].collider == splitCollider)
+                        {
+                            for (int j = 0; j < nodes.Length; j++)
+                            {
+                                if (nodes[j].gameObject == splitInfo[i].splitTo)
+                                {
+                                    currentNode = j;
+                                }
+                            }
+                        }
+                    }
+                    splitCollider = null;
+                }
+            }
+            else if (nodes[lastNode].nodeType == NodeInfo.NodeType.end)
+            {
+                FindObjectOfType<GameManager>().EndLevel();
+                enabled = false;
             }
             if (nodes[lastNode].enemiesToSpawn != null)
             {

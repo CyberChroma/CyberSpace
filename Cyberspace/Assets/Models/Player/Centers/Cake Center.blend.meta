@@ -35,7 +35,12 @@ ModelImporter:
     4300006: Cake_Center
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cake_Center
+    second: {fileID: 2100000, guid: d345e7e0e227d4c4dab56de3b1024c71, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -89,7 +94,7 @@ ModelImporter:
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4

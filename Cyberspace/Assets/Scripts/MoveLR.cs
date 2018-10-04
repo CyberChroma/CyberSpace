@@ -9,12 +9,14 @@ public class MoveLR : MonoBehaviour {
 
     private Rigidbody rb;
     private InputController inputController;
+    private MoveF moveF;
 
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
         rb.drag = slide;
         inputController = GameObject.Find("Input Controller").GetComponent<InputController>();
+        moveF = GameObject.Find("Game Area").GetComponent<MoveF>();
 	}
 	
 	// Update is called once per frame
@@ -31,4 +33,11 @@ public class MoveLR : MonoBehaviour {
         rb.AddForce (transform.right * moveDir * speed * 10);
         transform.localPosition = new Vector3 (transform.localPosition.x, transform.localPosition.y, 0); 
 	}
+
+    void OnTriggerEnter (Collider other) {
+        if (other.name.StartsWith("Split Collider"))
+        {
+            moveF.splitCollider = other.gameObject;
+        }
+    }
 }

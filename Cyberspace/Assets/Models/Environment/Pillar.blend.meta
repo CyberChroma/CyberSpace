@@ -16,6 +16,7 @@ ModelImporter:
     2100000: Leafs
     2100002: Trunk
     2100004: Pillar
+    2100006: Pillar__Pillar_psd
     2300000: Leafs
     2300002: Trunk
     2300004: Pillar
@@ -27,7 +28,12 @@ ModelImporter:
     4300004: Pillar
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pillar__Pillar_psd
+    second: {fileID: 2100000, guid: ba767b97ca2afaa43a5d8e53c051330e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -58,7 +64,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 0
@@ -81,7 +87,7 @@ ModelImporter:
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
