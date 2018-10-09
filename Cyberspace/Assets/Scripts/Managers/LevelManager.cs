@@ -6,56 +6,78 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour {
 
     public float moveSpeed;
+
     public Material unselected;
     public Material selected;
-    public Transform mCam;
+
+    public Transform levelsParent;
     public float minBoundary;
     public float maxBoundary;
+    public LevelInfo[] levels;
 
+    private Vector3 startPos;
     private LevelInfo activeLevel;
+    private LabCamera labCamera;
 
-	// Use this for initialization
-	void Start () {
-
+    public void Initialize (int[] lightGears, int[] scores) {
+        startPos = levelsParent.localPosition;
+        labCamera = FindObjectOfType<LabCamera>();
+        for (int i = 0; i < levels.Length; i++)
+        {
+            if (levels[i] != null)
+            {
+                levels[i].Initialize(lightGears[i], scores[i]);
+            }
+        }
+        for (int i = 0; i < levels.Length; i++)
+        {
+            if (levels[i] != null && levels[i].locked)
+            {
+                maxBoundary = levels[i].transform.localPosition.z + 0.1f;
+                break;
+            }
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.mousePosition.x < Screen.width / 8)
+        if (labCamera.activePos == 5)
         {
-            mCam.position = new Vector3(mCam.position.x + -moveSpeed * Time.deltaTime, 10, -1);
-        }
-        else if (Input.mousePosition.x > Screen.width - (Screen.width / 8))
-        {
-            mCam.transform.position = new Vector3(mCam.position.x + moveSpeed * Time.deltaTime, 10, -1);
-        }
-        if (mCam.position.x < minBoundary)
-        {
-            mCam.position = new Vector3(minBoundary, 10, -1);
-        }
-        else if (mCam.position.x > maxBoundary)
-        {
-            mCam.position = new Vector3(maxBoundary, 10, -1);
+            if (Input.GetKey(KeyCode.D))
+            {
+                levelsParent.localPosition = new Vector3(startPos.x, startPos.y, startPos.z + levelsParent.localPosition.z + -moveSpeed * Time.deltaTime);
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                levelsParent.localPosition = new Vector3(startPos.x, startPos.y, startPos.z + levelsParent.localPosition.z + moveSpeed * Time.deltaTime);
+            }
+            if (levelsParent.localPosition.z > minBoundary)
+            {
+                levelsParent.localPosition = new Vector3(startPos.x, startPos.y, startPos.z + minBoundary);
+            }
+            else if (levelsParent.localPosition.z < -maxBoundary)
+            {
+                levelsParent.localPosition = new Vector3(startPos.x, startPos.y, startPos.z + -maxBoundary);
+            }
         }
 	}
 
     public void ActivateLevel (LevelInfo levelInfo) {
-        if (activeLevel == levelInfo)
+        if (labCamera.activePos == 5)
         {
-            SceneManager.LoadScene(activeLevel.levelName);
-        }
-        else
-        {
-            if (activeLevel)
+            if (activeLevel == levelInfo)
             {
-                activeLevel.GetComponent<MeshRenderer>().material = unselected;
+                SceneManager.LoadScene(activeLevel.levelName);
             }
-            activeLevel = levelInfo;
-            activeLevel.GetComponent<MeshRenderer>().material = selected;
+            else
+            {
+                if (activeLevel)
+                {
+                    activeLevel.GetComponent<MeshRenderer>().material = unselected;
+                }
+                activeLevel = levelInfo;
+                activeLevel.GetComponent<MeshRenderer>().material = selected;
+            }
         }
-    }
-
-    public void Customize () {
-        SceneManager.LoadScene("Customize");
     }
 }

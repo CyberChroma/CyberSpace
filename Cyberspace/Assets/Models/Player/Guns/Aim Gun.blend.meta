@@ -42,6 +42,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Aim_Gun
+    second: {fileID: 2100000, guid: d77c5d7ff14640142bf673ef644c81af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Gun
     second: {fileID: 2100000, guid: d77c5d7ff14640142bf673ef644c81af, type: 2}
   materials:

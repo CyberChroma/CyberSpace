@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,102 +21,81 @@ public class ShipManager : MonoBehaviour {
 
     public float moveSpeed;
 
-    private int activeGun = 1;
-    private int activeCenter = 1;
-    private int activeWheel = 1;
+    private Vector3 startPos;
+    private GameSaver gameSaver;
+    private LabCamera labCamera;
 
 	// Use this for initialization
 	void Start () {
-        if (File.Exists(Application.persistentDataPath + "/SaveData.dat"))
-        {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/SaveData.dat", FileMode.Open);
-            SaveData data = (SaveData)bf.Deserialize(file);
-            activeGun = data.gun;
-            activeCenter = data.center;
-            activeWheel = data.wheel;
-            file.Close();
-            gunsParent.position = new Vector3((activeGun - 1) * -3, 0, 0);
-            centersParent.position = new Vector3((activeCenter - 1) * -3, 0, 0);
-            wheelsParent.position = new Vector3((activeWheel - 1) * -3, 0, 0);
-        }
+        gameSaver = FindObjectOfType<GameSaver>();
+        labCamera = FindObjectOfType<LabCamera>();
+        startPos = transform.localPosition;
+        gunsParent.localPosition = new Vector3(startPos.x - (gameSaver.activeGun - 1) * 3, startPos.y, startPos.z);
+        centersParent.localPosition = new Vector3(startPos.x - (gameSaver.activeCenter - 1) * 3, startPos.y, startPos.z);
+        wheelsParent.localPosition = new Vector3(startPos.x - (gameSaver.activeWheel - 1) * 3, startPos.y, startPos.z);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        gunsParent.position = Vector3.Lerp(gunsParent.position, new Vector3((activeGun - 1) * -3, 0, 0), moveSpeed * Time.deltaTime);
-        centersParent.position = Vector3.Lerp(centersParent.position, new Vector3((activeCenter - 1) * -3, 0, 0), moveSpeed * Time.deltaTime);
-        wheelsParent.position = Vector3.Lerp(wheelsParent.position, new Vector3((activeWheel - 1) * -3, 0, 0), moveSpeed * Time.deltaTime);
-	}
+        gunsParent.localPosition = Vector3.Lerp(gunsParent.localPosition, new Vector3(startPos.x - (gameSaver.activeGun - 1) * 3, startPos.y, startPos.z), moveSpeed * Time.deltaTime);
+        centersParent.localPosition = Vector3.Lerp(centersParent.localPosition, new Vector3(startPos.x - (gameSaver.activeCenter - 1) * 3, startPos.y, startPos.z), moveSpeed * Time.deltaTime);
+        wheelsParent.localPosition = Vector3.Lerp(wheelsParent.localPosition, new Vector3(startPos.x - (gameSaver.activeWheel - 1) * 3, startPos.y, startPos.z), moveSpeed * Time.deltaTime);
+        if (labCamera.activePos == 3 &&
 
-    public void Move (int arrow) {
-        switch (arrow)
+             Input.GetKeyDown(KeyCode.LeftShift))
         {
-            case 0:
-                activeGun--;
-                if (activeGun < 1)
-                {
-                    activeGun = 1;
-                }
-                break;
-            case 1:
-                activeGun++;
-                if (activeGun > numGuns)
-                {
-                    activeGun = numGuns;
-                }
-                break;
-            case 2:
-                activeCenter--;
-                if (activeCenter < 1)
-                {
-                    activeCenter = 1;
-                }
-                break;
-            case 3:
-                activeCenter++;
-                if (activeCenter > numCenters)
-                {
-                    activeCenter = numCenters;
-                }
-                break;
-            case 4:
-                activeWheel--;
-                if (activeWheel < 1)
-                {
-                    activeWheel = 1;
-                }
-                break;
-            case 5:
-                activeWheel++;
-                if (activeWheel > numWheels)
-                {
-                    activeWheel = numWheels;
-                }
-                break;
+            gameSaver.Save();
         }
     }
 
-    public void Back () {
-        Save();
-        SceneManager.LoadScene("Level Select");
+    public void Move (int arrow) {
+        if (labCamera.activePos == 3)
+        {
+            switch (arrow)
+            {
+                case 0:
+                    gameSaver.activeGun--;
+                    if (gameSaver.activeGun < 1)
+                    {
+                        gameSaver.activeGun = 1;
+                    }
+                    break;
+                case 1:
+                    gameSaver.activeGun++;
+                    if (gameSaver.activeGun > numGuns)
+                    {
+                        gameSaver.activeGun = numGuns;
+                    }
+                    break;
+                case 2:
+                    gameSaver.activeCenter--;
+                    if (gameSaver.activeCenter < 1)
+                    {
+                        gameSaver.activeCenter = 1;
+                    }
+                    break;
+                case 3:
+                    gameSaver.activeCenter++;
+                    if (gameSaver.activeCenter > numCenters)
+                    {
+                        gameSaver.activeCenter = numCenters;
+                    }
+                    break;
+                case 4:
+                    gameSaver.activeWheel--;
+                    if (gameSaver.activeWheel < 1)
+                    {
+                        gameSaver.activeWheel = 1;
+                    }
+                    break;
+                case 5:
+                    gameSaver.activeWheel++;
+                    if (gameSaver.activeWheel > numWheels)
+                    {
+                        gameSaver.activeWheel = numWheels;
+                    }
+                    break;
+            }
+        }
     }
-
-    public void Save () {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/SaveData.dat");
-        SaveData data = new SaveData();
-        data.gun = activeGun;
-        data.center = activeCenter;
-        data.wheel = activeWheel;
-        bf.Serialize(file, data);
-        file.Close();
-    }
-}
-
-[System.Serializable]
-class SaveData {
-    public int gun;
-    public int center;
-    public int wheel;
 }
