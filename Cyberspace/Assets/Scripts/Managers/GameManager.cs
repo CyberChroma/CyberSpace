@@ -67,6 +67,6 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator WaitToEnd () {
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("Level Select");
+        SceneManager.LoadScene("Lab");
     }
 }

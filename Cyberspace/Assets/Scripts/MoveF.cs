@@ -4,31 +4,37 @@ using UnityEngine;
 
 public class MoveF : MonoBehaviour {
 
-    public NodeInfo[] nodes;
+    public Transform[] pointsObj;
 
     [HideInInspector] public GameObject splitCollider;
     private int currentNode = 1;
     private int lastNode = 0;
     private float perc = 0;
-    private Vector3 midPoint;
-    private Vector3 m1;
-    private Vector3 m2;
+    //private BezierCurve path;
+    private NodeInfo[] nodes;
+    private BezierPoint[] points;
 
-	void Update () {
-        perc += (1 / Vector3.Distance(nodes[lastNode].transform.position, nodes[currentNode].transform.position)) * nodes[currentNode].speed * Time.deltaTime;
-        if (Vector3.Angle(nodes[lastNode].transform.forward, nodes[currentNode].transform.position - nodes[lastNode].transform.position) > 0)
+    void Awake () {
+        nodes = new NodeInfo[pointsObj.Length];
+        points = new BezierPoint[pointsObj.Length];
+        for (int i = 0; i < pointsObj.Length; i++)
         {
-            midPoint = nodes[lastNode].transform.position + nodes[lastNode].transform.forward * Vector3.Distance(nodes[lastNode].transform.position, nodes[currentNode].transform.position) / Mathf.Sqrt(2 * (1 - Mathf.Cos((180 - 2 * Vector3.Angle(nodes[lastNode].transform.forward, nodes[currentNode].transform.position - nodes[lastNode].transform.position)) * Mathf.Deg2Rad)));
+            nodes[i] = pointsObj[i].GetComponent<NodeInfo>();
+            points[i] = pointsObj[i].GetComponent<BezierPoint>();
         }
-        else
+        //path = points[0].curve;
+    }
+
+	void FixedUpdate () {
+        perc += (nodes[currentNode].speed / BezierCurve.ApproximateLength(points[lastNode], points[currentNode]) * Time.deltaTime);
+        Debug.DrawRay(BezierCurve.GetPoint(points[lastNode], points[currentNode], perc), new Vector3 (1, 1, 1) * 10, Color.red);
+        transform.position = BezierCurve.GetPoint(points[lastNode], points[currentNode], perc);
+        Vector3 lookRot = BezierCurve.GetPoint(points[lastNode], points[currentNode], perc + 0.001f) - transform.position;
+        if (lookRot != Vector3.zero)
         {
-            midPoint = (nodes[lastNode].transform.position + nodes[currentNode].transform.position) / 2;
+            transform.rotation = Quaternion.LookRotation(lookRot);
         }
-        m1 = Vector3.Lerp(nodes[lastNode].transform.position, midPoint, perc);
-        m2 = Vector3.Lerp(midPoint, nodes[currentNode].transform.position, perc);
-        transform.position = Vector3.Lerp (m1, m2, perc);
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Slerp(nodes[lastNode].transform.rotation, nodes[currentNode].transform.rotation, perc), 0.5f);
-        if (Vector3.Distance(transform.position, nodes[currentNode].transform.position) <= 0.1f && Quaternion.Angle(transform.rotation, nodes[currentNode].transform.rotation) <= 1f)
+        if (perc > 1f)
         {
             lastNode = currentNode;
             if (nodes[lastNode].nodeType == NodeInfo.NodeType.normal)
