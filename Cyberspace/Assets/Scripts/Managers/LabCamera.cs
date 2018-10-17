@@ -9,6 +9,7 @@ public class LabCamera : MonoBehaviour {
 
     [HideInInspector] public int activePos;
     private int turnDir;
+    private GameSaver gameSaver;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,7 @@ public class LabCamera : MonoBehaviour {
         transform.rotation = camPositions[1].rotation;
         activePos = 0;
         turnDir = 1;
+        gameSaver = FindObjectOfType<GameSaver>();
 	}
 
 	// Update is called once per frame
@@ -41,6 +43,7 @@ public class LabCamera : MonoBehaviour {
             }
             if (Input.GetKeyDown(KeyCode.Space)) {
                 activePos = turnDir;
+                gameSaver.Save();
             }
         } else if (Input.GetKeyDown(KeyCode.LeftShift)) {
             activePos = 0;

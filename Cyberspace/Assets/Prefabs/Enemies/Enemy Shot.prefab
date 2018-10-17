@@ -175,8 +175,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  deathExplosion: {fileID: 1000010993227932, guid: 8a84147ca8bcf974bbcfdad3694afa22,
-    type: 2}
 --- !u!114 &114946864955663024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,4 +203,5 @@ MonoBehaviour:
   - Environment
   - Player
   tagsToIgnore: []
-  deathExplosion: {fileID: 0}
+  deathExplosion: {fileID: 1000010993227932, guid: 8a84147ca8bcf974bbcfdad3694afa22,
+    type: 2}

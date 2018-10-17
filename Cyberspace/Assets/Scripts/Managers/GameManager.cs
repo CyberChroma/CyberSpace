@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
     public GameObject[] wheels;
 
     private bool fadeIn = true;
+    private Health player;
 
 	// Use this for initialization
 	void Awake () {
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour {
         {
             wheel.SetActive(false);
         }
+        player = GameObject.Find("Player").GetComponent<Health>();
         if (File.Exists(Application.persistentDataPath + "/SaveData.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
@@ -58,11 +60,20 @@ public class GameManager : MonoBehaviour {
         } else if (!fadeIn && blackScreen.color != new Color(0, 0, 0, 1)) {
             blackScreen.color = Color.Lerp(blackScreen.color, new Color(0, 0, 0, 1), fadeInSpeed);
         }
+        if (player.currentHealth <= 0)
+        {
+            StartCoroutine(WaitToRestart());
+        }
     }
 
     public void EndLevel () {
         fadeIn = false;
         StartCoroutine(WaitToEnd());
+    }
+
+    IEnumerator WaitToRestart () {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     IEnumerator WaitToEnd () {

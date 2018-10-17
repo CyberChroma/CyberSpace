@@ -40,12 +40,6 @@ public class ShipManager : MonoBehaviour {
         gunsParent.localPosition = Vector3.Lerp(gunsParent.localPosition, new Vector3(startPos.x - (gameSaver.activeGun - 1) * 3, startPos.y, startPos.z), moveSpeed * Time.deltaTime);
         centersParent.localPosition = Vector3.Lerp(centersParent.localPosition, new Vector3(startPos.x - (gameSaver.activeCenter - 1) * 3, startPos.y, startPos.z), moveSpeed * Time.deltaTime);
         wheelsParent.localPosition = Vector3.Lerp(wheelsParent.localPosition, new Vector3(startPos.x - (gameSaver.activeWheel - 1) * 3, startPos.y, startPos.z), moveSpeed * Time.deltaTime);
-        if (labCamera.activePos == 3 &&
-
-             Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            gameSaver.Save();
-        }
     }
 
     public void Move (int arrow) {

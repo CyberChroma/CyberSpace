@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - Environment
   - Hazard
+  - Turn Point
+  - Stick
+  - Armor
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - Mouse Hit
+  - 
   - 
   - 
   - 

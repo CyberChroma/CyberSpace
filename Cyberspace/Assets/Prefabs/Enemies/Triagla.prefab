@@ -218,8 +218,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1366225658941148}
-  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -40, y: 20, z: 30}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4978838582219744}
@@ -744,7 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5084cc417a702e748b90deae10363d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
+  bits: 10
 --- !u!114 &114364801940160500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -764,6 +764,7 @@ MonoBehaviour:
     type: 2}
   deathExplosion: {fileID: 1000010255299472, guid: 5fa23baf582013a45bd371b5ac6e0ff4,
     type: 2}
+  parent: {fileID: 1366225658941148}
   healthChanged: 0
   currentHealth: 0
 --- !u!114 &114795223310747566
@@ -777,7 +778,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a36d18bc63a3ab44a8727407ef4d432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotTime: 0.8
+  shotTime: 1.5
+  rand: 0.5
   shot: {fileID: 1005170031987200, guid: 523e32e8e9b47534f8346499b3ee319e, type: 2}
   gun: {fileID: 4929484327417654}
 --- !u!114 &114972220025395852
@@ -792,9 +794,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  path:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  stopTime: 3
-  state: 0
+  moveTime: 3
+  startDir: {x: 1, y: 0, z: 0}

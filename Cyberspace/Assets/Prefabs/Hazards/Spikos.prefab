@@ -3209,7 +3209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5084cc417a702e748b90deae10363d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: -5
+  bits: -5
 --- !u!135 &135013631277492350
 SphereCollider:
   m_ObjectHideFlags: 1

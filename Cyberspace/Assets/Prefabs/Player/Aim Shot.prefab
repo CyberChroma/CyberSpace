@@ -126,9 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da624e10e1481254db57d58120fa6822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
-  deathExplosion: {fileID: 1000010993227932, guid: 7017ab23ff3bf4149b68e6012d356fe6,
-    type: 2}
+  speed: 20
 --- !u!114 &114978296966530424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,6 +154,7 @@ MonoBehaviour:
   tagsToDestroy:
   - Environment
   - Enemy
+  - Armor
   tagsToIgnore: []
-  deathExplosion: {fileID: 1000010993227932, guid: 7017ab23ff3bf4149b68e6012d356fe6,
+  deathExplosion: {fileID: 1000010993227932, guid: 994585c8b95ebf542afed7943d6fa7c2,
     type: 2}

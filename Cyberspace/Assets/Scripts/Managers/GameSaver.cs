@@ -65,7 +65,8 @@ public class GameSaver : MonoBehaviour {
             activeCenter = data.center;
             activeWheel = data.wheel;
             file.Close();
-            foreach (int lightGear in lightGears) {
+            foreach (int lightGear in lightGears)
+            {
                 totalLightGears += lightGear;
             }
         }
