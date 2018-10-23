@@ -8,19 +8,18 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-    public float fadeInSpeed = 0.5f;
     public Image blackScreen;
 
     public GameObject[] guns;
     public GameObject[] centers;
     public GameObject[] wheels;
 
-    private bool fadeIn = true;
-    private Health player;
-
+    [HideInInspector] public bool fadeIn = true;
+    private GameSaver gameSaver;
 	// Use this for initialization
 	void Awake () {
         blackScreen.gameObject.SetActive(true);
+        gameSaver = GameSaver.instance;
         foreach (GameObject gun in guns)
         {
             gun.SetActive(false);
@@ -33,36 +32,18 @@ public class GameManager : MonoBehaviour {
         {
             wheel.SetActive(false);
         }
-        player = GameObject.Find("Player").GetComponent<Health>();
-        if (File.Exists(Application.persistentDataPath + "/SaveData.dat"))
-        {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/SaveData.dat", FileMode.Open);
-            SaveData data = (SaveData)bf.Deserialize(file);
-            guns[data.gun - 1].SetActive(true);
-            centers[data.center - 1].SetActive(true);
-            wheels[data.wheel - 1].SetActive(true);
-            file.Close();
-        }
-        else
-        {
-            guns[0].SetActive(true);
-            centers[0].SetActive(true);
-            wheels[0].SetActive(true);
-        }
+        guns[gameSaver.activeGun - 1].SetActive(true);
+        centers[gameSaver.activeCenter - 1].SetActive(true);
+        wheels[gameSaver.activeWheel - 1].SetActive(true);
 	}
 	
 	// Update is called once per frame
     void Update () {
         if (fadeIn && blackScreen.color != new Color(0, 0, 0, 0))
         {
-            blackScreen.color = Color.Lerp(blackScreen.color, new Color(0, 0, 0, 0), fadeInSpeed);
+            blackScreen.color = Color.Lerp(blackScreen.color, new Color(0, 0, 0, 0), 0.25f);
         } else if (!fadeIn && blackScreen.color != new Color(0, 0, 0, 1)) {
-            blackScreen.color = Color.Lerp(blackScreen.color, new Color(0, 0, 0, 1), fadeInSpeed);
-        }
-        if (player.currentHealth <= 0)
-        {
-            StartCoroutine(WaitToRestart());
+            blackScreen.color = Color.Lerp(blackScreen.color, new Color(0, 0, 0, 1), 0.25f);
         }
     }
 
@@ -71,13 +52,18 @@ public class GameManager : MonoBehaviour {
         StartCoroutine(WaitToEnd());
     }
 
+    public void Restart () {
+        fadeIn = false;
+        StartCoroutine(WaitToRestart());
+    }
+
     IEnumerator WaitToRestart () {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     IEnumerator WaitToEnd () {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Lab");
     }
 }

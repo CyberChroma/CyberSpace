@@ -10,13 +10,25 @@ public class EnemyMove : MonoBehaviour {
 
     private Vector3 dir;
     private Rigidbody rb;
+    private Vector3 startPos;
+    private Quaternion startRot;
 
-	// Use this for initialization
-	void Start () {
-        dir = startDir;
+    // Use this for initialization
+    void Start () {
         rb = GetComponent<Rigidbody>();
+        startPos = transform.position;
+        startRot = transform.rotation;
+    }
+
+	void OnEnable () {
+        dir = startDir;
         StartCoroutine(WaitToChangeDir());
 	}
+
+    void OnDisable () {
+        transform.position = startPos;
+        transform.rotation = startRot;
+    }
 
 	// Update is called once per frame
 	void FixedUpdate () {

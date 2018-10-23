@@ -734,7 +734,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4219401382449696}
   - component: {fileID: 135013631277492350}
-  - component: {fileID: 114245830386880300}
+  - component: {fileID: 114666375638858568}
   - component: {fileID: 114981706464540972}
   m_Layer: 0
   m_Name: Spikos
@@ -978,7 +978,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1963310510963340}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -20.1, y: 0.6, z: 63.7}
+  m_LocalPosition: {x: 8.57, y: -3.27, z: -0.18}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4201908774599504}
@@ -3181,7 +3181,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1608166005675714}
   m_Mesh: {fileID: 4300062, guid: 41f6c828614ee984bab6f7eb8d8b5e7a, type: 3}
---- !u!114 &114245830386880300
+--- !u!114 &114666375638858568
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3189,15 +3189,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1963310510963340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f570b375cc5fe1a478c12ef5a9c13015, type: 3}
+  m_Script: {fileID: 11500000, guid: 45531cc6ac3a3214688862e1f6f0880a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0
-  tagsToDestroy:
+  startHealth: 1
+  tagsToDamage:
   - Player
-  tagsToIgnore: []
+  timeToDisable: 0
+  destroy: 0
+  spawnExplosion: {fileID: 0}
   deathExplosion: {fileID: 1000010255299472, guid: 6f16d364b30858b47a0c688bbe3c34ec,
     type: 2}
+  parent: {fileID: 1963310510963340}
+  healthChanged: 0
+  currentHealth: 0
 --- !u!114 &114981706464540972
 MonoBehaviour:
   m_ObjectHideFlags: 1

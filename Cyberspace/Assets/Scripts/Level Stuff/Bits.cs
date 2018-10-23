@@ -10,7 +10,7 @@ public class Bits : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        bitsUI = GameObject.Find("Bits Text").GetComponent<BitsUI>();
+        bitsUI = GameObject.Find("Bits Slider").GetComponent<BitsUI>();
 	}
 
     void OnDisable () {

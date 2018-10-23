@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Health : MonoBehaviour {
 
-    public float startHealth = 1;
+    public float startHealth = 10;
     public string[] tagsToDamage = new string[1] {"Player Shot"};
     public float timeToDisable = 0;
+    public bool destroy = false;
     public GameObject spawnExplosion;
     public GameObject deathExplosion;
     public GameObject parent;
@@ -18,12 +19,12 @@ public class Health : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        healthChanged = true;
-        currentHealth = startHealth;
         particleParent = GameObject.Find("Particle Systems").transform;
 	}
-
+       
     void OnEnable () {
+        healthChanged = true;
+        currentHealth = startHealth;
         if (spawnExplosion && Time.timeSinceLevelLoad > 1)
         {
             Instantiate(spawnExplosion, transform.position, transform.rotation, particleParent);
@@ -51,6 +52,13 @@ public class Health : MonoBehaviour {
 
     IEnumerator WaitToDestroy () {
         yield return new WaitForSeconds(timeToDisable);
-        Destroy(parent.gameObject);
+        if (destroy)
+        {
+            Destroy(parent);
+        }
+        else
+        {
+            parent.SetActive(false);
+        }
     }
 }

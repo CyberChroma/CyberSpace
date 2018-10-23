@@ -378,7 +378,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1510266047973808}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.909416, y: 0.90941626, z: 0.74524117}
@@ -390,7 +390,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1844796772766436}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.909416, y: 0.90941626, z: 0.7452412}
@@ -422,6 +422,8 @@ MonoBehaviour:
   tagsToDamage:
   - Player
   - Player Shot
+  timeToDisable: 0
+  destroy: 0
   spawnExplosion: {fileID: 1000010255299472, guid: 8e6c3c69b85e1f64490139aa8d719d32,
     type: 2}
   deathExplosion: {fileID: 1000010255299472, guid: 8e6c3c69b85e1f64490139aa8d719d32,
@@ -442,7 +444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 1
   maxAngle: 45
-  dir: {x: 0, y: 1, z: 0}
+  startDir: {x: 0, y: 1, z: 0}
   pivot: {fileID: 4613554647306854}
 --- !u!114 &114672539692688154
 MonoBehaviour:
@@ -513,5 +515,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 1
   maxAngle: 45
-  dir: {x: 0, y: -1, z: 0}
+  startDir: {x: 0, y: -1, z: 0}
   pivot: {fileID: 4855520103271954}

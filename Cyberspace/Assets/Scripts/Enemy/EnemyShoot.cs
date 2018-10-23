@@ -17,9 +17,12 @@ public class EnemyShoot : MonoBehaviour {
 	void Start () {
         anim = GetComponentInChildren<Animator>();
         shotParent = GameObject.Find("Shots").transform;
+	}
+
+    void OnEnable () {
         canShoot = false;
         StartCoroutine(Shoot());
-	}
+    }
 
     void Update () {
         if (canShoot)

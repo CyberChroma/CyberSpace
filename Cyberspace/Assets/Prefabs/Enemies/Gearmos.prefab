@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 33821068307043166}
   - component: {fileID: 23695325509737748}
   - component: {fileID: 65123161004223148}
+  - component: {fileID: 65126537538568426}
   m_Layer: 0
   m_Name: Armor
   m_TagString: Armor
@@ -112,7 +113,7 @@ GameObject:
   - component: {fileID: 114126567464574926}
   m_Layer: 0
   m_Name: Gearmos
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,11 +160,11 @@ GameObject:
   - component: {fileID: 4924627242183094}
   - component: {fileID: 33753843593791104}
   - component: {fileID: 23818048304791094}
-  - component: {fileID: 65618864456892230}
   - component: {fileID: 114438107961827204}
+  - component: {fileID: 135037927382619322}
   m_Layer: 0
   m_Name: Weak_Spot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,7 +176,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1702723363333086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 46, y: -6, z: 0}
+  m_LocalPosition: {x: 47, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4677926888319708}
@@ -614,18 +615,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4169354, y: 1.4169364, z: 0.43225807}
   m_Center: {x: -0.0000002682209, y: 0, z: -0.67137116}
---- !u!65 &65618864456892230
+--- !u!65 &65126537538568426
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1835157724136172}
+  m_GameObject: {fileID: 1094410431424180}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.35, y: 0.26337206, z: 1.3500004}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.5, y: 0.5, z: 1}
+  m_Center: {x: 0, y: 0, z: -1.25}
 --- !u!114 &114126567464574926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -667,6 +668,8 @@ MonoBehaviour:
   startHealth: 1
   tagsToDamage:
   - Player Shot
+  timeToDisable: 0
+  destroy: 0
   spawnExplosion: {fileID: 1000010255299472, guid: 5fa23baf582013a45bd371b5ac6e0ff4,
     type: 2}
   deathExplosion: {fileID: 1000010255299472, guid: 5fa23baf582013a45bd371b5ac6e0ff4,
@@ -701,5 +704,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 1
   maxAngle: 65
-  dir: {x: 0, y: 0, z: 1}
+  startDir: {x: 0, y: 0, z: 1}
   pivot: {fileID: 4013642889309370}
+--- !u!135 &135037927382619322
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1835157724136172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6750002
+  m_Center: {x: 0, y: 0, z: 0}

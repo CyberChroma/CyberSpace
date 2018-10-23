@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LabCamera : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class LabCamera : MonoBehaviour {
     [HideInInspector] public int activePos;
     private int turnDir;
     private GameSaver gameSaver;
+    private LevelManager levelManager;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +19,8 @@ public class LabCamera : MonoBehaviour {
         transform.rotation = camPositions[1].rotation;
         activePos = 0;
         turnDir = 1;
-        gameSaver = FindObjectOfType<GameSaver>();
+        gameSaver = GameSaver.instance;
+        levelManager = FindObjectOfType<LevelManager>();
 	}
 
 	// Update is called once per frame
@@ -43,12 +46,29 @@ public class LabCamera : MonoBehaviour {
             }
             if (Input.GetKeyDown(KeyCode.Space)) {
                 activePos = turnDir;
-                gameSaver.Save();
+                if (activePos == 5)
+                {
+                    levelManager.Activate();
+                }
+                if (activePos == 1)
+                {
+                    StartCoroutine(MainMenu());
+                }
             }
         } else if (Input.GetKeyDown(KeyCode.LeftShift)) {
+            if (activePos == 5)
+            {
+                levelManager.Deactivate();
+            }
             activePos = 0;
+            gameSaver.Save();
         }
         transform.position = Vector3.Lerp(transform.position, camPositions[activePos].position, smoothing * Time.deltaTime);
         transform.rotation = Quaternion.Slerp(transform.rotation, camPositions[activePos].rotation, smoothing * Time.deltaTime);
 	}
+
+    IEnumerator MainMenu () {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("Main Menu");
+    }
 }

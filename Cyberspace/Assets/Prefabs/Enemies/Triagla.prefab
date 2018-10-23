@@ -218,8 +218,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1366225658941148}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4978838582219744}
@@ -760,6 +760,8 @@ MonoBehaviour:
   tagsToDamage:
   - Player
   - Player Shot
+  timeToDisable: 0
+  destroy: 0
   spawnExplosion: {fileID: 1000010255299472, guid: 5fa23baf582013a45bd371b5ac6e0ff4,
     type: 2}
   deathExplosion: {fileID: 1000010255299472, guid: 5fa23baf582013a45bd371b5ac6e0ff4,
@@ -794,5 +796,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  moveTime: 3
+  moveTime: 2
   startDir: {x: 1, y: 0, z: 0}

@@ -16,6 +16,8 @@ public class InputManager : MonoBehaviour {
     [HideInInspector] public bool inputAL = false;
     [HideInInspector] public bool inputAR = false;
 
+    [HideInInspector] public bool canMove = true;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -23,10 +25,21 @@ public class InputManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        inputL = Input.GetKey(moveL);
-        inputR = Input.GetKey(moveR);
-        inputS = Input.GetKeyDown(shoot);
-        inputAL = Input.GetKey(aimL);
-        inputAR = Input.GetKey(aimR);
+        if (canMove)
+        {
+            inputL = Input.GetKey(moveL);
+            inputR = Input.GetKey(moveR);
+            inputS = Input.GetKeyDown(shoot);
+            inputAL = Input.GetKey(aimL);
+            inputAR = Input.GetKey(aimR);
+        }
+        else
+        {
+            inputL = false;
+            inputR = false;
+            inputS = false;
+            inputAL = false;
+            inputAR = false;
+        }
 	}
 }

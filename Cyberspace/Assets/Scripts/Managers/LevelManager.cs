@@ -11,73 +11,61 @@ public class LevelManager : MonoBehaviour {
     public Material selected;
 
     public Transform levelsParent;
-    public float minBoundary;
-    public float maxBoundary;
     public LevelInfo[] levels;
 
     private Vector3 startPos;
-    private LevelInfo activeLevel;
+    private int activeLevel;
     private LabCamera labCamera;
 
-    public void Initialize (int[] lightGears, int[] scores) {
+    public void Initialize (int level, int[][] lightGears, int[] levelBits, string[] levelTimes) {
         startPos = levelsParent.localPosition;
         labCamera = FindObjectOfType<LabCamera>();
+        activeLevel = level;
         for (int i = 0; i < levels.Length; i++)
         {
             if (levels[i] != null)
             {
-                levels[i].Initialize(lightGears[i], scores[i]);
-            }
-        }
-        for (int i = 0; i < levels.Length; i++)
-        {
-            if (levels[i] != null && levels[i].locked)
-            {
-                maxBoundary = levels[i].transform.localPosition.z + 0.1f;
-                break;
+                levels[i].Initialize(lightGears[i], levelBits[i], levelTimes[i]);
             }
         }
     }
+
+    public void Activate () {
+        levels[activeLevel].GetComponent<MeshRenderer>().material = selected;
+    }
 	
+    public void Deactivate () {
+        levels[activeLevel].GetComponent<MeshRenderer>().material = unselected;
+    }
+
 	// Update is called once per frame
 	void Update () {
         if (labCamera.activePos == 5)
         {
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.A))
             {
-                levelsParent.localPosition = new Vector3(startPos.x, startPos.y, startPos.z + levelsParent.localPosition.z + -moveSpeed * Time.deltaTime);
-            }
-            else if (Input.GetKey(KeyCode.A))
-            {
-                levelsParent.localPosition = new Vector3(startPos.x, startPos.y, startPos.z + levelsParent.localPosition.z + moveSpeed * Time.deltaTime);
-            }
-            if (levelsParent.localPosition.z > minBoundary)
-            {
-                levelsParent.localPosition = new Vector3(startPos.x, startPos.y, startPos.z + minBoundary);
-            }
-            else if (levelsParent.localPosition.z < -maxBoundary)
-            {
-                levelsParent.localPosition = new Vector3(startPos.x, startPos.y, startPos.z + -maxBoundary);
-            }
-        }
-	}
-
-    public void ActivateLevel (LevelInfo levelInfo) {
-        if (labCamera.activePos == 5)
-        {
-            if (activeLevel == levelInfo)
-            {
-                SceneManager.LoadScene(activeLevel.levelName);
-            }
-            else
-            {
-                if (activeLevel)
+                if (activeLevel != 0)
                 {
-                    activeLevel.GetComponent<MeshRenderer>().material = unselected;
+                    levels[activeLevel].GetComponent<MeshRenderer>().material = unselected;
+                    activeLevel--;
+                    levels[activeLevel].GetComponent<MeshRenderer>().material = selected;
                 }
-                activeLevel = levelInfo;
-                activeLevel.GetComponent<MeshRenderer>().material = selected;
+            }
+            else if (Input.GetKeyDown(KeyCode.D))
+            {
+                if (activeLevel != levels.Length - 1 && !levels[activeLevel + 1].locked)
+                {
+                    levels[activeLevel].GetComponent<MeshRenderer>().material = unselected;
+                    activeLevel++;
+                    levels[activeLevel].GetComponent<MeshRenderer>().material = selected;
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.Space))
+            {
+                GameSaver.instance.level = activeLevel;
+                SceneManager.LoadScene(levels[activeLevel].levelName);
             }
         }
-    }
+        levelsParent.localPosition = Vector3.Lerp(levelsParent.localPosition, new Vector3(startPos.x, startPos.y, startPos.z + -levels[activeLevel].transform.localPosition.z), moveSpeed * Time.deltaTime);
+	}
 }

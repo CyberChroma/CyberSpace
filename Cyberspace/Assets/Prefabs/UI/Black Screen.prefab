@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222189093503273812}
   - component: {fileID: 114375580786385350}
   m_Layer: 5
-  m_Name: Fade
+  m_Name: Black Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

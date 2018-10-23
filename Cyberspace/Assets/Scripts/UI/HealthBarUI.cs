@@ -8,9 +8,9 @@ public class HealthBarUI : MonoBehaviour {
     public float startSliderMoveSpeed = 3; // The speed for the slider to initially fill up
     public float sliderMoveSpeed = 2; // The speed at which the slider moves to its target position
     public Health health; // The health script from which to track the health
-    public Color fullColor; // The color of the slider when it is full
-    public Color halfColor; // The color of the slider when it is at half
-    public Color emptyColor; // The color of the slider when it is empty
+    public Color fullColor = Color.green; // The color of the slider when it is full
+    public Color halfColor = Color.yellow; // The color of the slider when it is at half
+    public Color emptyColor = Color.red; // The color of the slider when it is empty
 
     private Slider slider; // Reference to health slider
     private Image fillImage; // Reference to the fill image on the slider
@@ -40,7 +40,7 @@ public class HealthBarUI : MonoBehaviour {
     }
 
     void MoveSlider () { // Moves the slider and sets the colors based on the value
-        slider.value = Mathf.MoveTowards(slider.value, health.currentHealth, currentSliderMoveSpeed * Time.deltaTime); // Setting the slider to match the current health
+        slider.value = Mathf.Lerp(slider.value, health.currentHealth, currentSliderMoveSpeed * Time.deltaTime); // Setting the slider to match the current health
         if (slider.value > slider.maxValue / 2) { // If the value is over half
             fillImage.color = Color.Lerp (halfColor, fullColor, (slider.value - (slider.maxValue / 2)) / (slider.value / 2)); // Sets the color of the image
         } else { // If the value is under half
