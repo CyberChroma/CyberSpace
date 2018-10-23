@@ -17,6 +17,10 @@ public class Shoot : MonoBehaviour {
         shotParent = GameObject.Find("Shots").transform;
         inputManager = FindObjectOfType<InputManager>();
     }
+
+    void OnEnable () {
+        canShoot = true;
+    }
 	
 	// Update is called once per frame
 	void Update () {

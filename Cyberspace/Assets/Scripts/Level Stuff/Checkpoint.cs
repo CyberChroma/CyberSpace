@@ -6,25 +6,22 @@ public class Checkpoint : MonoBehaviour {
 
     private Animator anim;
     private RespawnManager respawnManager;
+    private bool activated;
 
 	// Use this for initialization
 	void Awake () {
         respawnManager = FindObjectOfType<RespawnManager>();
         anim = GetComponentInChildren<Animator>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        
-	}
 
     void OnTriggerEnter (Collider other) {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !activated)
         {
             if (anim)
             {
                 anim.SetTrigger("Activate");
             }
+            activated = true;
             respawnManager.ActivateCheckpoint (this);
         }
     }

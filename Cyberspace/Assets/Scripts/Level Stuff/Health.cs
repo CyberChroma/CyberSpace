@@ -16,16 +16,12 @@ public class Health : MonoBehaviour {
     [HideInInspector] public float currentHealth;
 
     private Transform particleParent;
-
-	// Use this for initialization
-	void Start () {
-        particleParent = GameObject.Find("Particle Systems").transform;
-	}
        
     void OnEnable () {
+        particleParent = GameObject.Find("Particle Systems").transform;
         healthChanged = true;
         currentHealth = startHealth;
-        if (spawnExplosion && Time.timeSinceLevelLoad > 1)
+        if (spawnExplosion)
         {
             Instantiate(spawnExplosion, transform.position, transform.rotation, particleParent);
         }

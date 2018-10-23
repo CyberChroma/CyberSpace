@@ -26,10 +26,6 @@ public class GameSaver : MonoBehaviour {
         if (instance == null)
         {
             instance = this;
-            for (int i = 0; i < lightGears.Length; i++)
-            {
-                lightGears[i] = new int[3];
-            }
             if (SceneManager.GetActiveScene().name != "Main Menu")
             {
                 Load();
@@ -46,6 +42,12 @@ public class GameSaver : MonoBehaviour {
     void NewScene () {
         if (FindObjectOfType<LevelManager>())
         {
+            foreach (int[] lightGearSet in lightGears)
+            {
+                foreach (int lightGear in lightGearSet) {
+                    totalLightGears += lightGear;
+                }
+            }
             FindObjectOfType<LevelManager>().Initialize(level, lightGears, levelBits, levelTimes);
         }
     }
@@ -58,6 +60,10 @@ public class GameSaver : MonoBehaviour {
         }
         levelBits = new int[60];
         levelTimes = new string[60];
+        for (int i = 0; i < levelTimes.Length; i++)
+        {
+            levelTimes[i] = "99:99";
+        }
         bits = 0;
         totalLightGears = 0;
         activeGun = 1;
@@ -96,18 +102,19 @@ public class GameSaver : MonoBehaviour {
             }
             lightGears = data.lightGears;
             levelBits = data.levelBits;
+            if (data.levelTimes[0] == null)
+            {
+                for (int i = 0; i < data.levelTimes.Length; i++)
+                {
+                    data.levelTimes[i] = "99:99";
+                }
+            }
             levelTimes = data.levelTimes;
             bits = data.bits;
             activeGun = data.gun;
             activeCenter = data.center;
             activeWheel = data.wheel;
             file.Close();
-            foreach (int[] lightGearSet in lightGears)
-            {
-                foreach (int lightGear in lightGearSet) {
-                    totalLightGears += lightGear;
-                }
-            }
         }
     }
 
@@ -128,7 +135,7 @@ public class GameSaver : MonoBehaviour {
         {
             levelBits[level] = bitsEarned;
         }
-        int savedLevelTime = int.Parse(levelTimes[level].Substring(0, levelTimes[level].IndexOf(":"))) * 60 + int.Parse(levelTimes[level].Substring(levelTimes[level].IndexOf(":")));
+        int savedLevelTime = int.Parse(levelTimes[level].Substring(0, levelTimes[level].IndexOf(":"))) * 60 + int.Parse(levelTimes[level].Substring(levelTimes[level].IndexOf(":")+1));
         int newLevelTime = int.Parse(time.Substring(0, time.IndexOf(":"))) * 60 + int.Parse(time.Substring(time.IndexOf(":")+1));
         if (savedLevelTime > newLevelTime)
         {

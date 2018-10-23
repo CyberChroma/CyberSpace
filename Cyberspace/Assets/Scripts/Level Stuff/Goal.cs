@@ -37,12 +37,12 @@ public class Goal : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                gameSaver.Record(lightGearsEarned, bitsUI.bits, timeUI.timeText.text);
+                gameSaver.Record(lightGearsEarned, bitsUI.bits, timeUI.min.ToString() + ":" + timeUI.sec.ToString("D2"));
                 gameManager.EndLevel();
             }
             else if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                gameSaver.Record(lightGearsEarned, bitsUI.bits, timeUI.timeText.text);
+                gameSaver.Record(lightGearsEarned, bitsUI.bits, timeUI.min.ToString() + ":" + timeUI.sec.ToString("D2"));
                 gameManager.Restart();
             }
         }

@@ -33,12 +33,12 @@ public class EnemyShoot : MonoBehaviour {
 
     IEnumerator Shoot () {
         canShoot = false;
+        yield return new WaitForSeconds(shotTime + Random.Range(-rand, rand));
         if (anim)
         {
             anim.SetTrigger("Shoot");
         }
         Instantiate(shot, gun.position, gun.rotation, shotParent);
-        yield return new WaitForSeconds(shotTime + Random.Range(-rand, rand));
         canShoot = true;
     }
 }

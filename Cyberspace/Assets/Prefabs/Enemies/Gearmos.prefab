@@ -703,7 +703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 1
-  maxAngle: 65
+  maxAngle: 80
   startDir: {x: 0, y: 0, z: 1}
   pivot: {fileID: 4013642889309370}
 --- !u!135 &135037927382619322

@@ -50,17 +50,18 @@ public class Turn : MonoBehaviour {
     void OnTriggerEnter (Collider other) {
         if (other.CompareTag("Player"))
         {
-            turned = !turned;
             playerRb.velocity = Vector3.zero;
             playerRb.transform.position = new Vector3 (transform.position.x, playerRb.position.y, transform.position.z);
             move.enabled = false;
-            if (turned)
+            if (Quaternion.Angle(playerRb.transform.rotation, Quaternion.Euler(startRot)) < 1)
             {
                 playerRb.transform.rotation = Quaternion.Euler(startRot);
+                turned = true;
             }
             else
             {
-               playerRb.transform.rotation = Quaternion.Euler(endRot);
+                playerRb.transform.rotation = Quaternion.Euler(endRot);
+                turned = false;
             }
             turning = true;
         }

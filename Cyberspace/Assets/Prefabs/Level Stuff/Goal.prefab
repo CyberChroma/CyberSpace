@@ -67,14 +67,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1363419213837828}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -16, y: -15, z: 82}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8, y: -15, z: 84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4843613692203106}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4669810858142992
 Transform:
   m_ObjectHideFlags: 1
@@ -179,8 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7b5e8f9fd56444bb17822f58a59a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reqBits: 150
-  reqTime: 1:30
+  reqBits: 300
+  reqTime: 3:00
   levelCompleteScreen: {fileID: 0}
   bitsGear: {fileID: 0}
   timeGear: {fileID: 0}

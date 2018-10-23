@@ -55,7 +55,7 @@ public class LabCamera : MonoBehaviour {
                     StartCoroutine(MainMenu());
                 }
             }
-        } else if (Input.GetKeyDown(KeyCode.LeftShift)) {
+        } else if (Input.GetKeyDown(KeyCode.LeftShift) && activePos != 1) {
             if (activePos == 5)
             {
                 levelManager.Deactivate();

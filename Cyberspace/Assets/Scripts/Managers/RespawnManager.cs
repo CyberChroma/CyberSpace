@@ -14,8 +14,8 @@ public class RespawnManager : MonoBehaviour {
     private Checkpoint activeCheckpoint;
     private GameManager gameManager;
 
-    private GameObject[] enemies;
-    private bool[] enemyEvents;
+    private GameObject[] gameObjectEvents;
+    private bool[] completedEvents;
     private BitsUI bitsUI;
     private int bits;
 
@@ -29,11 +29,29 @@ public class RespawnManager : MonoBehaviour {
         gameManager = FindObjectOfType<GameManager>();
         player.SetActive(false);
         Transform enemiesParent = GameObject.Find("Enemies").transform;
-        enemies = new GameObject[enemiesParent.childCount];
-        enemyEvents = new bool[enemies.Length];
-        for (int i = 0; i < enemies.Length; i++)
+        Transform hazardsParent = GameObject.Find("Hazards").transform;
+        Transform enemyWavesParent = GameObject.Find("Enemy Waves").transform;
+        Transform npcParent = GameObject.Find("NPCs").transform;
+        gameObjectEvents = new GameObject[enemiesParent.childCount + hazardsParent.childCount + enemyWavesParent.childCount + npcParent.childCount];
+        completedEvents = new bool[gameObjectEvents.Length];
+        for (int i = 0; i < gameObjectEvents.Length; i++)
         {
-            enemies[i] = enemiesParent.GetChild(i).gameObject;
+            if (i < enemiesParent.childCount)
+            {
+                gameObjectEvents[i] = enemiesParent.GetChild(i).gameObject;
+            }
+            else if (i < enemiesParent.childCount + hazardsParent.childCount)
+            {
+                gameObjectEvents[i] = hazardsParent.GetChild(i - enemiesParent.childCount).gameObject;
+            }
+            else if (i < enemiesParent.childCount + hazardsParent.childCount + enemyWavesParent.childCount)
+            {
+                gameObjectEvents[i] = enemyWavesParent.GetChild(i - enemiesParent.childCount - hazardsParent.childCount).gameObject;
+            }
+            else
+            {
+                gameObjectEvents[i] = npcParent.GetChild(i - enemiesParent.childCount - hazardsParent.childCount - enemyWavesParent.childCount).gameObject;
+            }
         }
         bitsUI = FindObjectOfType<BitsUI>();
         StartCoroutine(Respawn());
@@ -53,11 +71,11 @@ public class RespawnManager : MonoBehaviour {
         
     public void ActivateCheckpoint (Checkpoint newCheckpoint) {
         activeCheckpoint = newCheckpoint;
-        for (int i = 0; i < enemies.Length; i++)
+        for (int i = 0; i < gameObjectEvents.Length; i++)
         {
-            if (!enemies[i].activeInHierarchy)
+            if (!gameObjectEvents[i].activeInHierarchy)
             {
-                enemyEvents[i] = true;
+                completedEvents[i] = true;
             }
         }
         bits = bitsUI.bits;
@@ -70,15 +88,12 @@ public class RespawnManager : MonoBehaviour {
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         gameManager.fadeIn = false;
         yield return new WaitForSeconds(1);
-        for (int i = 0; i < enemyEvents.Length; i++)
+        for (int i = 0; i < completedEvents.Length; i++)
         {
-            if (enemyEvents[i])
+            gameObjectEvents[i].SetActive(false);
+            if (!completedEvents[i])
             {   
-                enemies[i].SetActive(false);
-            }
-            else
-            {
-                enemies[i].SetActive(true);
+                gameObjectEvents[i].SetActive(true);
             }
         }
         bitsUI.SetBits(bits);

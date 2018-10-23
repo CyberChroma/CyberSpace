@@ -14,11 +14,11 @@ public class TimeUI : MonoBehaviour {
     [HideInInspector] public Slider timeSlider;
     [HideInInspector] public Text timeText;
     [HideInInspector] public bool stop;
+    [HideInInspector] public int sec;
+    [HideInInspector] public int min;
 
     private Image fillImage; // Reference to the fill image on the slider
     private float levelTime;
-    private int sec;
-    private int min;
 
 	// Use this for initialization
 	void Start () {
