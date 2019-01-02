@@ -1,42 +1,45 @@
 fileFormatVersion: 2
-guid: 01935b0a90865084aad6341f5d3ccfca
+guid: 088dcee0a51fd6f4797fd87d78f01618
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Leafs
     100002: //RootNode
     100004: Trunk
-    100006: //RootNode
-    100008: Tile_Floor
+    100006: Eyes
+    100008: Hair
+    100010: Prof__Maven
+    100012: //RootNode
     400000: Leafs
     400002: //RootNode
     400004: Trunk
-    400006: //RootNode
-    400008: Tile_Floor
+    400006: Eyes
+    400008: Hair
+    400010: Prof__Maven
+    400012: //RootNode
     2100000: Leafs
     2100002: Trunk
-    2100004: Material
-    2100006: Tile_Floor
-    2100008: Base
-    2100010: White_Tiles
-    2100012: Grey_Tiles
+    2100004: Hair
+    2100006: Material
+    2100008: Eyes
     2300000: Leafs
     2300002: Trunk
-    2300004: Tile_Floor
+    2300004: Eyes
+    2300006: Hair
+    2300008: Prof__Maven
     3300000: Leafs
     3300002: Trunk
-    3300004: Tile_Floor
+    3300004: Eyes
+    3300006: Hair
+    3300008: Prof__Maven
     4300000: Leafs
     4300002: Trunk
-    4300004: Tile_Floor
+    4300004: Hair
+    4300006: Prof__Maven
+    4300008: Eyes
     7400000: Default Take
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tile_Floor
-    second: {fileID: 2100000, guid: 755661dfb3dd34f44bb52592ba3a6f7c, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -70,7 +73,6 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    useSRGBMaterialColor: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
@@ -95,9 +97,6 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
-    blendShapeNormalImportMode: 1
-    normalSmoothingSource: 0
   importAnimation: 0
   copyAvatar: 0
   humanDescription:
