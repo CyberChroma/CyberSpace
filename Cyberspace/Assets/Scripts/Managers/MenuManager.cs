@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 
-    public Text[] texts;
+    public MeshRenderer[] texts;
+    public Material activeMat;
+    public Material unactiveMat;
 
     private int activeButton;
     private GameSaver gameSaver;
@@ -14,7 +15,7 @@ public class MenuManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         gameSaver = GameSaver.instance;
-        texts[activeButton].fontStyle = FontStyle.Bold;
+        texts[activeButton].material = activeMat;
 	}
 	
 	// Update is called once per frame
@@ -23,18 +24,18 @@ public class MenuManager : MonoBehaviour {
         {
             if (activeButton != 0)
             {
-                texts[activeButton].fontStyle = FontStyle.Normal;
+                texts[activeButton].material = unactiveMat;
                 activeButton--;
-                texts[activeButton].fontStyle = FontStyle.Bold;
+                texts[activeButton].material = activeMat;
             }
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
             if (activeButton != texts.Length - 1)
             {
-                texts[activeButton].fontStyle = FontStyle.Normal;
+                texts[activeButton].material = unactiveMat;
                 activeButton++;
-                texts[activeButton].fontStyle = FontStyle.Bold;
+                texts[activeButton].material = activeMat;
             }
         }
         else if (Input.GetKeyDown(KeyCode.Space))

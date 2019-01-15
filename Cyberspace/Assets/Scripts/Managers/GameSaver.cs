@@ -15,8 +15,7 @@ public class GameSaver : MonoBehaviour {
     [HideInInspector] public int bits = 0;
     [HideInInspector] public int totalLightGears = 0;
     [HideInInspector] public int activeGun = 1;
-    [HideInInspector] public int activeCenter = 1;
-    [HideInInspector] public int activeWheel = 1;
+    [HideInInspector] public int activeShip = 1;
 
     [HideInInspector] public int level = 0;
 
@@ -42,13 +41,14 @@ public class GameSaver : MonoBehaviour {
     void NewScene () {
         if (FindObjectOfType<LevelManager>())
         {
+            totalLightGears = 0;
             foreach (int[] lightGearSet in lightGears)
             {
                 foreach (int lightGear in lightGearSet) {
                     totalLightGears += lightGear;
                 }
             }
-            FindObjectOfType<LevelManager>().Initialize(level, lightGears, levelBits, levelTimes);
+            FindObjectOfType<LevelManager>().Initialize(level, lightGears, levelBits, levelTimes, totalLightGears);
         }
     }
 
@@ -67,8 +67,7 @@ public class GameSaver : MonoBehaviour {
         bits = 0;
         totalLightGears = 0;
         activeGun = 1;
-        activeCenter = 1;
-        activeWheel = 1;
+        activeShip = 1;
         Save();
     }
 
@@ -81,8 +80,7 @@ public class GameSaver : MonoBehaviour {
         data.levelTimes = levelTimes;
         data.bits = bits;
         data.gun = activeGun;
-        data.center = activeCenter;
-        data.wheel = activeWheel;
+        data.ship = activeShip;
         bf.Serialize(file, data);
         file.Close();
     }
@@ -112,8 +110,7 @@ public class GameSaver : MonoBehaviour {
             levelTimes = data.levelTimes;
             bits = data.bits;
             activeGun = data.gun;
-            activeCenter = data.center;
-            activeWheel = data.wheel;
+            activeShip = data.ship;
             file.Close();
         }
     }
@@ -153,6 +150,5 @@ class SaveData {
     public string[] levelTimes = new string[60];
     public int bits = 0;
     public int gun = 1;
-    public int center = 1;
-    public int wheel = 1;
+    public int ship = 1;
 }

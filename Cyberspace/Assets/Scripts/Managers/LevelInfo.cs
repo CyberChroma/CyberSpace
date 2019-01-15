@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelInfo : MonoBehaviour {
         
     public string levelName;
+    public MeshRenderer mat;
     public Material lockedMat;
     public int reqLightGears;
     public LevelInfo prevLevel;
@@ -38,7 +39,7 @@ public class LevelInfo : MonoBehaviour {
         if ((gameSaver.totalLightGears < reqLightGears) || (prevLevel != null && prevLevel.lightGears[0] == 0))
         {
             locked = true;
-            GetComponent<MeshRenderer>().material = lockedMat;
+            mat.material = lockedMat;
         }
     }
 }

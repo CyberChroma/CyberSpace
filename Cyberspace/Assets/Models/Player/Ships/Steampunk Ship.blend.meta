@@ -1,0 +1,257 @@
+fileFormatVersion: 2
+guid: e36f828b667b9e1479e1caffe30bf70b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Center
+    100002: //RootNode
+    100004: Bulgy_Part
+    100006: Bulgy_Part_001
+    100008: Bulgy_Part_002
+    100010: Bulgy_Part_003
+    100012: Bulgy_Part_004
+    100014: Bulgy_Part_005
+    100016: Bulgy_Part_006
+    100018: Bulgy_Part_007
+    100020: Bulgy_Part_008
+    100022: Bulgy_Part_009
+    100024: Cylinder
+    100026: Lower_Base
+    100028: Wheel
+    100030: Wheel_001
+    100032: Wing
+    100034: Wing_001
+    100036: Wing_002
+    100038: Wing_003
+    100040: Wing_004
+    100042: Wing_005
+    100044: Wing_Middle
+    100046: Wing_Middle_001
+    100048: Chimney
+    100050: Chimney_001
+    400000: Center
+    400002: //RootNode
+    400004: Bulgy_Part
+    400006: Bulgy_Part_001
+    400008: Bulgy_Part_002
+    400010: Bulgy_Part_003
+    400012: Bulgy_Part_004
+    400014: Bulgy_Part_005
+    400016: Bulgy_Part_006
+    400018: Bulgy_Part_007
+    400020: Bulgy_Part_008
+    400022: Bulgy_Part_009
+    400024: Cylinder
+    400026: Lower_Base
+    400028: Wheel
+    400030: Wheel_001
+    400032: Wing
+    400034: Wing_001
+    400036: Wing_002
+    400038: Wing_003
+    400040: Wing_004
+    400042: Wing_005
+    400044: Wing_Middle
+    400046: Wing_Middle_001
+    400048: Chimney
+    400050: Chimney_001
+    2100000: unnamed
+    2100002: Frame
+    2100004: Glass
+    2100006: Center
+    2100008: Wheel
+    2100010: Wing
+    2100012: Chimney
+    2100014: Chimney_Top
+    2300000: Center
+    2300002: Bulgy_Part
+    2300004: Bulgy_Part_001
+    2300006: Bulgy_Part_002
+    2300008: Bulgy_Part_003
+    2300010: Bulgy_Part_004
+    2300012: Bulgy_Part_005
+    2300014: Bulgy_Part_006
+    2300016: Bulgy_Part_007
+    2300018: Bulgy_Part_008
+    2300020: Bulgy_Part_009
+    2300022: Cylinder
+    2300024: Lower_Base
+    2300026: Wheel
+    2300028: Wheel_001
+    2300030: Wing
+    2300032: Wing_001
+    2300034: Wing_002
+    2300036: Wing_003
+    2300038: Wing_004
+    2300040: Wing_005
+    2300042: Wing_Middle
+    2300044: Wing_Middle_001
+    2300046: Chimney
+    2300048: Chimney_001
+    3300000: Center
+    3300002: Bulgy_Part
+    3300004: Bulgy_Part_001
+    3300006: Bulgy_Part_002
+    3300008: Bulgy_Part_003
+    3300010: Bulgy_Part_004
+    3300012: Bulgy_Part_005
+    3300014: Bulgy_Part_006
+    3300016: Bulgy_Part_007
+    3300018: Bulgy_Part_008
+    3300020: Bulgy_Part_009
+    3300022: Cylinder
+    3300024: Lower_Base
+    3300026: Wheel
+    3300028: Wheel_001
+    3300030: Wing
+    3300032: Wing_001
+    3300034: Wing_002
+    3300036: Wing_003
+    3300038: Wing_004
+    3300040: Wing_005
+    3300042: Wing_Middle
+    3300044: Wing_Middle_001
+    3300046: Chimney
+    3300048: Chimney_001
+    4300000: Center
+    4300002: Bulgy_Part_009
+    4300004: Bulgy_Part_008
+    4300006: Bulgy_Part_007
+    4300008: Bulgy_Part_006
+    4300010: Bulgy_Part_005
+    4300012: Bulgy_Part_004
+    4300014: Bulgy_Part_003
+    4300016: Bulgy_Part_002
+    4300018: Bulgy_Part_001
+    4300020: Bulgy_Part
+    4300022: Cylinder
+    4300024: Lower_Base
+    4300026: Wing_005
+    4300028: Wing_004
+    4300030: Wing_Middle_001
+    4300032: Wing_003
+    4300034: Wing_002
+    4300036: Wing_001
+    4300038: Wing
+    4300040: Wing_Middle
+    4300042: Wheel_001
+    4300044: Wheel
+    4300046: Chimney_001
+    4300048: Chimney
+    7400000: Moving
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Moving
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.5
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.5
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 0
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

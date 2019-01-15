@@ -12,7 +12,6 @@ public class PartStats : MonoBehaviour {
     public GameObject shot;
     public float coolDown;
 
-    public bool canAim;
     public float turnSpeed;
 
     private Health health;
@@ -36,10 +35,6 @@ public class PartStats : MonoBehaviour {
                 shoot.shot = shot;
             }
             coolDown += coolDown;
-            if (canAim)
-            {
-                aim.enabled = true;
-            }
             aim.turnSpeed += turnSpeed;
         }
 	}

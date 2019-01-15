@@ -34,6 +34,7 @@ ModelImporter:
     2100004: Board
     2100006: Crate_Center
     2100008: Crate
+    2100010: Boards
     2300000: Leafs
     2300002: Trunk
     2300004: Board
@@ -73,11 +74,6 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Crate
-    second: {fileID: 2100000, guid: a55f62c4acab3d347afc856e8758ce43, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Crate_Center
     second: {fileID: 2100000, guid: a55f62c4acab3d347afc856e8758ce43, type: 2}
   materials:
@@ -113,6 +109,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
@@ -133,10 +130,13 @@ ModelImporter:
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
+    normalSmoothAngle: 0
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 3
   importAnimation: 0
   copyAvatar: 0
   humanDescription:
@@ -151,7 +151,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1

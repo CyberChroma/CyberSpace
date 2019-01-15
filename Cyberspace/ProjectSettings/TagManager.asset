@@ -3,15 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Player Shot
-  - Enemy Shot
-  - Enemy
-  - Environment
-  - Hazard
-  - Turn Point
-  - Stick
-  - Armor
+  tags: []
   layers:
   - Default
   - TransparentFX

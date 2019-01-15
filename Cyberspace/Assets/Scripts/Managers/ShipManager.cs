@@ -8,16 +8,13 @@ using UnityEngine.SceneManagement;
 public class ShipManager : MonoBehaviour {
 
     public Transform gunsParent;
-    public Transform centersParent;
-    public Transform wheelsParent;
+    public Transform shipsParent;
     public Transform[] arrows;
 
     public GameObject[] guns;
-    public GameObject[] centers;
-    public GameObject[] wheels;
+    public GameObject[] ships;
     public int numGuns;
-    public int numCenters;
-    public int numWheels;
+    public int numShips;
 
     public float moveSpeed;
 
@@ -32,15 +29,13 @@ public class ShipManager : MonoBehaviour {
         labCamera = FindObjectOfType<LabCamera>();
         startPos = transform.localPosition;
         gunsParent.localPosition = new Vector3(startPos.x - (gameSaver.activeGun - 1) * 3, startPos.y, startPos.z);
-        centersParent.localPosition = new Vector3(startPos.x - (gameSaver.activeCenter - 1) * 3, startPos.y, startPos.z);
-        wheelsParent.localPosition = new Vector3(startPos.x - (gameSaver.activeWheel - 1) * 3, startPos.y, startPos.z);
+        shipsParent.localPosition = new Vector3(startPos.x - (gameSaver.activeShip - 1) * 3, startPos.y, startPos.z);
 	}
 	
 	// Update is called once per frame
 	void Update () {
         gunsParent.localPosition = Vector3.Lerp(gunsParent.localPosition, new Vector3(startPos.x - (gameSaver.activeGun - 1) * 3, startPos.y, startPos.z), moveSpeed * Time.deltaTime);
-        centersParent.localPosition = Vector3.Lerp(centersParent.localPosition, new Vector3(startPos.x - (gameSaver.activeCenter - 1) * 3, startPos.y, startPos.z), moveSpeed * Time.deltaTime);
-        wheelsParent.localPosition = Vector3.Lerp(wheelsParent.localPosition, new Vector3(startPos.x - (gameSaver.activeWheel - 1) * 3, startPos.y, startPos.z), moveSpeed * Time.deltaTime);
+        shipsParent.localPosition = Vector3.Lerp(shipsParent.localPosition, new Vector3(startPos.x - (gameSaver.activeShip - 1) * 3, startPos.y, startPos.z), moveSpeed * Time.deltaTime);
         if (labCamera.activePos == 3)
         {
             if (Input.GetKeyDown(KeyCode.A))
@@ -60,7 +55,7 @@ public class ShipManager : MonoBehaviour {
             }
             else if (Input.GetKeyDown(KeyCode.S))
             {
-                if (arrowOffset != 4)
+                if (arrowOffset != 2)
                 {
                     arrowOffset += 2;
                 }
@@ -104,31 +99,17 @@ public class ShipManager : MonoBehaviour {
             }
             break;
         case 2:
-            gameSaver.activeCenter--;
-            if (gameSaver.activeCenter < 1)
+            gameSaver.activeShip--;
+            if (gameSaver.activeShip < 1)
             {
-                gameSaver.activeCenter = 1;
+                gameSaver.activeShip = 1;
             }
             break;
         case 3:
-            gameSaver.activeCenter++;
-            if (gameSaver.activeCenter > numCenters)
+            gameSaver.activeShip++;
+            if (gameSaver.activeShip > numShips)
             {
-                gameSaver.activeCenter = numCenters;
-            }
-            break;
-        case 4:
-            gameSaver.activeWheel--;
-            if (gameSaver.activeWheel < 1)
-            {
-                gameSaver.activeWheel = 1;
-            }
-            break;
-        case 5:
-            gameSaver.activeWheel++;
-            if (gameSaver.activeWheel > numWheels)
-            {
-                gameSaver.activeWheel = numWheels;
+                gameSaver.activeShip = numShips;
             }
             break;
         }

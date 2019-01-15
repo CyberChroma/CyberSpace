@@ -5,6 +5,7 @@ using UnityEngine;
 public class RespawnManager : MonoBehaviour {
 
     public Checkpoint startPoint;
+    public GameObject spawnExplosion;
 
     private bool respawning = true;
     private GameObject player;
@@ -14,6 +15,7 @@ public class RespawnManager : MonoBehaviour {
     private Checkpoint activeCheckpoint;
     private GameManager gameManager;
 
+    private Transform particleParent;
     private GameObject[] gameObjectEvents;
     private bool[] completedEvents;
     private BitsUI bitsUI;
@@ -27,6 +29,7 @@ public class RespawnManager : MonoBehaviour {
         inputManager = FindObjectOfType<InputManager>();
         activeCheckpoint = startPoint;
         gameManager = FindObjectOfType<GameManager>();
+        particleParent = GameObject.Find("Particle Systems").transform;
         player.SetActive(false);
         Transform enemiesParent = GameObject.Find("Enemies").transform;
         Transform hazardsParent = GameObject.Find("Hazards").transform;
@@ -105,6 +108,7 @@ public class RespawnManager : MonoBehaviour {
         player.transform.rotation = activeCheckpoint.transform.rotation;
         camPivot.transform.position = activeCheckpoint.transform.position;
         camPivot.transform.rotation = activeCheckpoint.transform.rotation;
+        Instantiate(spawnExplosion, transform.position, transform.rotation, particleParent);
         gameManager.fadeIn = true;
         activeCheckpoint.Respawn();
         yield return new WaitForSeconds(1);

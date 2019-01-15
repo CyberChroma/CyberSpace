@@ -21,7 +21,7 @@ public class Health : MonoBehaviour {
         particleParent = GameObject.Find("Particle Systems").transform;
         healthChanged = true;
         currentHealth = startHealth;
-        if (spawnExplosion)
+        if (Time.timeSinceLevelLoad < 0.1f && spawnExplosion)
         {
             Instantiate(spawnExplosion, transform.position, transform.rotation, particleParent);
         }

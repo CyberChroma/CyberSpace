@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shot : MonoBehaviour {
     
     public float speed;
+    public float acceleration;
 
     private Rigidbody rb;
 
@@ -16,5 +17,6 @@ public class Shot : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         rb.MovePosition(rb.position + transform.forward * speed * Time.deltaTime);
+        speed += acceleration * Time.deltaTime;
 	}
 }

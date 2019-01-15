@@ -11,8 +11,7 @@ public class GameManager : MonoBehaviour {
     public Image blackScreen;
 
     public GameObject[] guns;
-    public GameObject[] centers;
-    public GameObject[] wheels;
+    public GameObject[] ships;
 
     [HideInInspector] public bool fadeIn = true;
     private GameSaver gameSaver;
@@ -24,17 +23,12 @@ public class GameManager : MonoBehaviour {
         {
             gun.SetActive(false);
         }
-        foreach (GameObject center in centers)
+        foreach (GameObject ship in ships)
         {
-            center.SetActive(false);
-        }
-        foreach (GameObject wheel in wheels)
-        {
-            wheel.SetActive(false);
+            ship.SetActive(false);
         }
         guns[gameSaver.activeGun - 1].SetActive(true);
-        centers[gameSaver.activeCenter - 1].SetActive(true);
-        wheels[gameSaver.activeWheel - 1].SetActive(true);
+        ships[gameSaver.activeShip - 1].SetActive(true);
 	}
 	
 	// Update is called once per frame

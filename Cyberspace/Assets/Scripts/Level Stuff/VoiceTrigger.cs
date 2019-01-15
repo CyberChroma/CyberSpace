@@ -28,7 +28,10 @@ public class VoiceTrigger : MonoBehaviour {
     }
 
     void OnDisable () {
-        subtitleText.text = "";
+        if (subtitleText)
+        {
+            subtitleText.text = "";
+        }
         if (voiceAudio)
         {
             voiceAudio.Stop();

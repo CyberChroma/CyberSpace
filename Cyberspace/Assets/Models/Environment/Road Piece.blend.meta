@@ -8,31 +8,44 @@ ModelImporter:
     100004: Trunk
     100006: //RootNode
     100008: Road_Piece
+    100010: Arrows
+    100012: Arrows_001
+    100014: Arrows_002
     400000: Leafs
     400002: //RootNode
     400004: Trunk
     400006: //RootNode
     400008: Road_Piece
+    400010: Arrows
+    400012: Arrows_001
+    400014: Arrows_002
     2100000: Leafs
     2100002: Trunk
     2100004: Road_Piece
+    2100006: Material
+    2100008: Arrows
+    2100010: Ends
     2300000: Leafs
     2300002: Trunk
     2300004: Road_Piece
+    2300006: Arrows
+    2300008: Arrows_001
+    2300010: Arrows_002
     3300000: Leafs
     3300002: Trunk
     3300004: Road_Piece
+    3300006: Arrows
+    3300008: Arrows_001
+    3300010: Arrows_002
     4300000: Leafs
     4300002: Trunk
     4300004: Road_Piece
+    4300006: Arrows_002
+    4300008: Arrows_001
+    4300010: Arrows
     7400000: Default Take
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Road_Piece
-    second: {fileID: 2100000, guid: 439bd8e7061b480428ee7c947404e60a, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -66,6 +79,7 @@ ModelImporter:
     globalScale: 0.5
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
@@ -86,10 +100,13 @@ ModelImporter:
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
+    normalSmoothAngle: 0
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 3
   importAnimation: 0
   copyAvatar: 0
   humanDescription:
@@ -104,7 +121,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
